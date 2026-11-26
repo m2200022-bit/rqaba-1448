@@ -27364,12 +27364,15 @@ try{cmpAction=function(id,inRep){return cmpOne(id,inRep)}}catch(err){console.err
 ACT.cView=b=>cmpOne(b.dataset.id);
 
 /* ===== رقم الإصدار بجوار حالة الحفظ ===== */
-window.__BUILD='2026.11.26-2136';
+window.__BUILD='2026.11.26-2207';
 function verChip(){try{const bar=document.querySelector('#v2 .topbar-actions');if(!bar)return;let v=bar.querySelector('.ver9')
  if(!v){v=document.createElement('span');v.className='ver9';v.title='رقم إصدار النظام — للتأكد أنك تعمل على آخر نسخة';const ref=bar.querySelector('.fs7p')||bar.querySelector('[class*="sync"]')||bar.firstElementChild;ref?ref.insertAdjacentElement('afterend',v):bar.prepend(v)}
  v.innerHTML=`<span>الإصدار <bdi dir="ltr">${window.__BUILD}</bdi></span>`}catch(e){}}
 try{const _r=render;render=function(){const x=_r.apply(this,arguments);setTimeout(verChip,60);return x}}catch(e){}
 setTimeout(verChip,800);setInterval(()=>{if(!document.querySelector('#v2 .ver9'))verChip()},3000);
+
+/* إخفاء شارة الحالة من تذييل المحاضر نهائياً */
+window.__stKey=()=>null;
 }
 
 function v2zeInit(){const PH='(                    )'
