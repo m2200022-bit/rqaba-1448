@@ -4247,6 +4247,10 @@ body.v2on .v2backbtn{display:none}
 #v2 .ver9 svg{width:14px;height:14px;color:#146B4F}
 #v2 #v2sync{display:inline-flex !important;align-items:center;gap:6px;flex-wrap:nowrap}
 #v2 .ver9{height:28px;font-size:11.5px;padding:0 9px}
+#v2modal .cm9x,#v2 .cm9x{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;align-items:end}
+#v2 .cm9x label{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:700}
+#v2 .cm9x label.full{grid-column:1/-1}#v2 .cm9x label.ck{flex-direction:row;align-items:center;gap:8px;font-weight:600}
+#v2 .cm9x textarea{min-height:56px;border:1px solid var(--border);border-radius:10px;padding:8px 10px;font:inherit}
 
 /* ===== الهوية الخضراء الهادئة — موحدة لكل صفحات النظام ===== */
 #v2:not([data-theme="dark"]){--primary:#146B4F !important;--primary-2:#0E5A43 !important;--primary-100:#E5F2EB !important;--bg:#F2F7F4 !important;--surface:#FFFFFF;--surface-2:#F7FBF9 !important;--surface-3:#EDF5F0 !important;--border:#E1ECE6 !important;--border-strong:#CFDFD6 !important;--ink:#1F2A25 !important;--ink-soft:#56625C !important;--ink-faint:#8A958F !important;--radius:12px !important;--radius-sm:10px !important;--shadow-sm:0 1px 3px rgba(16,60,40,.06) !important;--shadow:0 2px 8px rgba(16,60,40,.06) !important;background:#F2F7F4 !important}
@@ -27405,7 +27409,16 @@ new MutationObserver(()=>{if(document.querySelector('#v2 figure.ph .ph-tools:not
 
 function v2zlInit(){
 /* ================= محضر الشكوى بترويسة المحاضر + صفحة واحدة للعرض والإجراء ================= */
-const CSS9=`.cm9{direction:rtl;color:#24212A;font-family:Tajawal,'IBM Plex Sans Arabic',Tahoma,sans-serif;background:#fff;position:relative;padding:18px 26px 10px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+const CSS9=`.cm9{padding:14px 24px 8px !important;font-size:12.5px}.cm9 .hd9 img{height:50px !important}.cm9 h1{font-size:24px !important;margin:8px 0 0 !important}.cm9 .sub9{margin-bottom:8px !important;font-size:13.5px !important}
+.cm9 td,.cm9 th{padding:5px 8px !important;line-height:1.5 !important}.cm9 table{margin-bottom:6px !important}.cm9 .sh{padding:5px 12px !important;font-size:13.5px !important;margin-top:6px !important}
+.cm9 .mb{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:4px 0 8px}
+.cm9 .mb .dc{position:relative;display:flex;align-items:center;gap:6px;border:1.3px solid #8E2B40;border-radius:9px;padding:15px 8px 6px;min-height:30px}
+.cm9 .mb .dc small{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:#8E2B40;color:#fff;font-size:11px;font-weight:800;padding:1px 14px 2px;border-radius:0 0 9px 9px;white-space:nowrap}
+.cm9 .mb .dc .ic{color:#7A1F2E;border-left:1.2px dashed #b04a5e;padding-left:6px;display:flex}.cm9 .mb .dc .ic svg{width:16px;height:16px}
+.cm9 .mb .dc b{flex:1;text-align:center;font-size:14px;font-weight:800;white-space:nowrap}
+.cm9 .sg td{height:auto !important;vertical-align:middle}.cm9 .sg img{max-height:46px;max-width:150px;display:block;margin:auto}
+.cm9 .apx{text-align:right !important;min-height:40px;line-height:1.8 !important;white-space:pre-wrap}
+.cm9{direction:rtl;color:#24212A;font-family:Tajawal,'IBM Plex Sans Arabic',Tahoma,sans-serif;background:#fff;position:relative;padding:18px 26px 10px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .cm9::before{content:"";position:absolute;inset:6px;border-inline:3px solid #7A1F2E;pointer-events:none}.cm9::after{content:"";position:absolute;inset:6px 11px;border-inline:1px solid #B8975A;pointer-events:none}
 .cm9 .hd9{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:8px;border-bottom:1.5px solid #8A1538}.cm9 .hd9 img{height:58px;object-fit:contain;max-width:46%}
 .cm9 h1{text-align:center;color:#8A1538;font-size:28px;margin:14px 0 2px;font-weight:800}.cm9 .sub9{text-align:center;font-weight:700;font-size:14.5px;margin-bottom:12px}
@@ -27419,17 +27432,19 @@ const CSS9=`.cm9{direction:rtl;color:#24212A;font-family:Tajawal,'IBM Plex Sans 
 .cm9 .dt{direction:ltr;unicode-bidi:isolate;display:inline-block}`;
 const e=v=>h(v==null||v===''?'—':String(v));
 const dG=d=>d?`<bdi class="dt">${h(gDate(d))}م</bdi>`:'—';
+function apInfo(){let o={};try{o=S()||{}}catch(_){}const f=k=>o[k]||(D.meta&&D.meta[k])||(D.tpl&&D.tpl[k])||'';return{name:f('approverName')||f('unitHead')||'محمد حسن الكعبي',title:f('unitHeadTitle')||'رئيس وحدة الرقابة والتفتيش',sig:f('approverSig')||'',label:f('approvalLabel')||'الاعتماد والتوجيه'}}
 function cmpDoc(c){const T=typeof TPL!=='undefined'?TPL:{},row=(()=>{try{return rowById(c.campaignId)||{}}catch(_){return{}}})()
  const acts=(()=>{try{return cmpActs(c)}catch(_){return c.acts||[]}})(),r=c.reportId&&(()=>{try{return repById(c.reportId)}catch(_){return null}})()
  const reg=r&&r.st==='published'?(()=>{try{return regStr(r.no)}catch(_){return String(r.no||'')}})():'بعد الاعتماد'
  const cat=c.cat==='أخرى'&&c.catOther?c.catOther:(c.cat||(()=>{try{return guessCat(c.text)}catch(_){return ''}})())
  const pri=(()=>{try{return cPriL(c.pri||guessPri(c.text))}catch(_){return ''}})()
  const res=(()=>{try{return cresL(c)}catch(_){return c.status==='closed'?'مغلقة':'مفتوحة'}})()
+ const W=(D.inspectors||[]).find(x=>x.id===c.writerId)||null;const AP=apInfo();
  let foot='';try{const o=window.__phPg;window.__phPg=true;foot=window.__fsT?window.__fsT(1,1):'';window.__phPg=o}catch(_){}
  return `<div class="cm9"><style>${CSS9}${CSS9.replace(/\.cm9/g,'#v2 .cm9')}</style>
  <div class="hd9">${T.img12?`<img src="${T.img12}" alt="">`:''}${T.img11?`<img src="${T.img11}" alt="">`:''}</div>
  <h1>محضر شكوى</h1><div class="sub9">${h(S().unit||'وحدة الرقابة والتفتيش')} — موسم الحج <bdi class="dt">${h(S().seasonH||'1448')}هـ</bdi> / <bdi class="dt">${h(S().seasonG||'2027')}م</bdi></div>
- <table class="meta"><tr><th>رقم الشكوى:</th><th>التاريخ:</th><th>وقت الاستقبال:</th><th>رقم القيد:</th></tr><tr><td>${e(cNo(c))}</td><td>${dG(c.date)}</td><td>${c.time?e(fmtTime(c.time)):'—'}</td><td>${e(reg)}</td></tr></table>
+ <div class="mb"><div class="dc"><small>رقم الشكوى</small><span class="ic">${(()=>{try{return ic('hash')}catch(_){return ''}})()}</span><b>${e(cNo(c))}</b></div><div class="dc"><small>التاريخ</small><span class="ic">${(()=>{try{return ic('calendar')}catch(_){return ''}})()}</span><b>${dG(c.date)}</b></div><div class="dc"><small>وقت الاستقبال</small><span class="ic">${(()=>{try{return ic('clock')}catch(_){return ''}})()}</span><b>${c.time?e(fmtTime(c.time)):'—'}</b></div><div class="dc"><small>رقم القيد</small><span class="ic">${(()=>{try{return ic('book-text')}catch(_){return ''}})()}</span><b>${e(reg)}</b></div></div>
  <div class="sh">أولاً: بيانات الشكوى</div><table class="kv">
  <tr><th>اسم المشتكي</th><td>${e(c.name)}</td><th>الحملة</th><td>${e(c.campaign||row.campaign)}</td></tr>
  <tr><th>الهاتف</th><td><bdi class="dt">${e(c.phone)}</bdi></td><th>جهة استقبال الشكوى</th><td>${e(c.channel)}</td></tr>
@@ -27439,23 +27454,31 @@ function cmpDoc(c){const T=typeof TPL!=='undefined'?TPL:{},row=(()=>{try{return 
  <div class="sh">ثانياً: الإجراءات المتبعة</div><table class="acts"><tr><th style="width:6%">م</th><th style="width:15%">التاريخ</th><th>الإجراء المتبع</th><th style="width:20%">الجهة التي تمت مخاطبتها</th><th style="width:20%">الإجراء المتخذ من الجهة</th></tr>
  ${acts.length?acts.map((a,i)=>`<tr><td>${i+1}</td><td>${a.date?`<bdi class="dt">${h(gDate(a.date))}</bdi>`:'—'}</td><td style="text-align:right">${e(a.text)}</td>${i===0?`<td rowspan="${acts.length}">${e(c.party||'غير مدون')}</td><td rowspan="${acts.length}">${e(c.partyAct||'غير مدون')}</td>`:''}</tr>`).join(''):`<tr class="blank"><td>1</td><td></td><td></td><td>${e(c.party)}</td><td>${e(c.partyAct)}</td></tr>`}</table>
  <div class="sh">ثالثاً: نتيجة المعالجة وحالة الشكوى</div><table class="acts"><tr><th>نتيجة المعالجة</th><th>حالة الشكوى</th><th>تاريخ الإغلاق</th></tr><tr><td>${e(c.result||'غير مدونة')}</td><td class="${c.status==='closed'?'st-c':'st-o'}">${e(res)}</td><td>${dG(c.closeDate)}</td></tr></table>
- <div class="sh">محرر المحضر</div><table class="acts blank"><tr><th>الاسم</th><th>الصفة</th><th>التوقيع</th></tr><tr><td></td><td></td><td></td></tr></table>
- <div class="sh">الاعتماد والتوجيه</div><table class="ap"><tr><td colspan="3"></td></tr><tr class="ln"><td>الاسم: ........................</td><td>الصفة: ........................</td><td>التوقيع: ........................</td></tr></table>
+ <div class="sh">محرر المحضر</div><table class="acts sg"><tr><th>الاسم</th><th>الصفة</th><th>التوقيع</th></tr><tr><td>${W?h(W.name):''}</td><td>${W?h(W.role||''):''}</td><td>${W&&W.sig&&c.wSig!==false?`<img src="${W.sig}" alt="">`:''}</td></tr></table>
+ <div class="sh">${h(AP.label)}</div><table class="ap sg"><tr><td colspan="3" class="apx">${c.apprTxt?h(c.apprTxt):''}</td></tr><tr><td><b>الاسم:</b> ${h(AP.name)}</td><td><b>الصفة:</b> ${h(AP.title)}</td><td><b>التوقيع:</b> ${AP.sig&&c.aSig!==false?`<img src="${AP.sig}" alt="" style="display:inline-block;vertical-align:middle">`:''}</td></tr></table>
  ${foot?`<div class="ft9" style="border:0;padding:0"><img src="${foot}" alt=""></div>`:''}</div>`}
 window.__cmpDoc=cmpDoc;
 try{cPrintHtml=function(c){return cmpDoc(c)}}catch(err){console.error('cm9',err)}
 ACT.cPrint=b=>{const c=(D.complaints||[]).find(x=>x.id===(b.dataset?b.dataset.id:b));if(!c)return
- const html=`<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>محضر شكوى ${h(cNo(c))}</title><style>@page{size:A4;margin:8mm}body{margin:0}</style></head><body>${cmpDoc(c)}<script>setTimeout(()=>print(),500)<\/script></body></html>`
+ const html=`<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>محضر شكوى ${h(cNo(c))}</title><style>@page{size:A4;margin:8mm}body{margin:0}</style></head><body>${cmpDoc(c)}<script>(function(){const el=document.querySelector('.cm9');const H=1105;if(el&&el.scrollHeight>H)el.style.zoom=(H/el.scrollHeight).toFixed(3);setTimeout(()=>print(),500)})()<\/script></body></html>`
  const w=window.open(URL.createObjectURL(new Blob([html],{type:'text/html'})),'_blank');if(!w)vt('اسمح بالنوافذ المنبثقة للطباعة','warn')};
 /* صفحة واحدة: المحضر بالأعلى، والإجراء أسفله */
 const docBox=c=>`<div class="cm9w" id="cm9doc">${cmpDoc(c)}</div>`;
 let rT=0;const refreshDoc=()=>{clearTimeout(rT);rT=setTimeout(()=>{try{const c=CF&&(D.complaints||[]).find(x=>x.id===CF.id);const b=document.getElementById('cm9doc');if(c&&b)b.innerHTML=cmpDoc(c)}catch(_){}},200)};
 document.addEventListener('input',ev=>{if(ev.target.closest&&ev.target.closest('#v2cform'))refreshDoc()},true);
 document.addEventListener('click',ev=>{if(ev.target.closest&&ev.target.closest('#v2cform'))setTimeout(refreshDoc,60)},true);
+function exUI(c){const I=D.inspectors||[];if(!c.writerId){let m=null;try{m=window.__me&&window.__me()}catch(_){}const f=(m&&m.name&&I.find(x=>x.name.includes(m.name)))||I.find(x=>x.def)||I[0];if(f)c.writerId=f.id}
+ return `<div class="cm9-sep">${ic('users-round')}<span>محرر المحضر والاعتماد</span></div><div class="cm9x">
+ <label>محرر المحضر (من الفريق)<select data-c9="writerId">${I.map(x=>`<option value="${h(x.id)}" ${x.id===c.writerId?'selected':''}>${h(x.name)} — ${h(x.role||'')}</option>`).join('')}</select></label>
+ <label class="ck"><input type="checkbox" data-c9="wSig" ${c.wSig!==false?'checked':''}> إدراج توقيع المحرر</label>
+ <label class="full">الاعتماد والتوجيهات<textarea data-c9="apprTxt" rows="2" placeholder="مثال: يُعتمد، مع توجيه الحملة بتعويض الحاج وتزويدنا بما يفيد">${h(c.apprTxt||'')}</textarea></label>
+ <label class="ck"><input type="checkbox" data-c9="aSig" ${c.aSig!==false?'checked':''}> إدراج توقيع المعتمد (${h(apInfo().name)})</label></div>`}
+document.addEventListener('input',ev=>{const t=ev.target.closest&&ev.target.closest('[data-c9]');if(!t||!CF)return;const c=(D.complaints||[]).find(x=>x.id===CF.id);if(!c)return;const k=t.dataset.c9;c[k]=t.type==='checkbox'?t.checked:t.value;try{persist()}catch(_){}refreshDoc()},true);
+document.addEventListener('change',ev=>{const t=ev.target.closest&&ev.target.closest('[data-c9]');if(!t||!CF)return;const c=(D.complaints||[]).find(x=>x.id===CF.id);if(!c)return;const k=t.dataset.c9;c[k]=t.type==='checkbox'?t.checked:t.value;try{persist()}catch(_){}refreshDoc()},true);
 async function cmpOne(id,inRep){const c=(D.complaints||[]).find(x=>x.id===id);if(!c)return
  CF={id:id,inRep:inRep};if(!c.cat)c.cat=guessCat(c.text);const r0=c.reportId&&repById(c.reportId);const closed=cIsClosed(c)
  const ok=await vModal({icon:'clipboard-check',title:`الشكوى ${cNoS(c)} — ${h(c.campaign||'')}`,wide:true,
-  body:`${docBox(c)}<div class="cm9-sep">${ic('pencil')}<span>${closed?'سجل الإجراءات':'كتابة الإجراء المتبع'}</span></div><div id="v2cform">${cmpForm(c)}</div>`,
+  body:`${docBox(c)}${exUI(c)}<div class="cm9-sep">${ic('pencil')}<span>${closed?'سجل الإجراءات':'كتابة الإجراء المتبع'}</span></div><div id="v2cform">${cmpForm(c)}</div>`,
   actions:[{label:'حفظ',cls:'btn-primary',icon:'check',result:'save'},{label:'طباعة المحضر',cls:'btn-outline',icon:'printer',result:'print'},{label:r0?'فتح محضر متابعة الشكوى':'حفظ وعمل محضر متابعة',cls:'btn-outline',icon:'file-plus',result:'rep'},...closed?[]:[{label:'تعديل بيانات الشكوى',cls:'btn-ghost',icon:'pencil',result:'edit'}],{label:'إغلاق',result:null}],
   onOpen:()=>{const m=document.querySelector('#v2modal .modal');if(m)m.classList.add('cm9m')}})
  CF=null;if(!ok)return;cmpSync(c)
@@ -27467,7 +27490,7 @@ try{cmpAction=function(id,inRep){return cmpOne(id,inRep)}}catch(err){console.err
 ACT.cView=b=>cmpOne(b.dataset.id);
 
 /* ===== رقم الإصدار بجوار حالة الحفظ ===== */
-window.__BUILD='2026.11.27-0546';
+window.__BUILD='2026.11.27-0630';
 function verChip(){try{const bar=document.querySelector('#v2 .topbar-actions');if(!bar)return;let v=bar.querySelector('.ver9')
  if(!v){v=document.createElement('span');v.className='ver9';v.title='رقم إصدار النظام — للتأكد أنك تعمل على آخر نسخة';const ref=bar.querySelector('.fs7p')||bar.querySelector('[class*="sync"]')||bar.firstElementChild;ref?ref.insertAdjacentElement('afterend',v):bar.prepend(v)}
  v.innerHTML=`<span>الإصدار <bdi dir="ltr">${window.__BUILD}</bdi></span>`}catch(e){}}
@@ -27660,27 +27683,29 @@ const pad=n=>String(n).padStart(2,'0');
 let kvP=null;const kv=()=>kvP||(kvP=new Promise((res,rej)=>{const q=indexedDB.open('rqaba_autobk',1);q.onupgradeneeded=()=>q.result.createObjectStore('h');q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)}));
 const kget=async k=>{const db=await kv();return new Promise(r=>{const q=db.transaction('h').objectStore('h').get(k);q.onsuccess=()=>r(q.result);q.onerror=()=>r(null)})};
 const kset=async(k,v)=>{const db=await kv();return new Promise(r=>{const t=db.transaction('h','readwrite');t.objectStore('h').put(v,k);t.oncomplete=()=>r(true);t.onerror=()=>r(false)})};
-const AB={h:null,name:'',last:0,done:false};
+const AB={h:null,name:'',last:0,done:false,kind:'dir'};
 const supported=()=>typeof window.showDirectoryPicker==='function';
 const stamp=t=>{const d=new Date(t);return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}م الساعة ${pad(d.getHours())}:${pad(d.getMinutes())}`};
 async function write(){if(!AB.h)return false;const d=new Date();const day=`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`
- const txt=JSON.stringify(D);for(const nm of[`rqaba-backup-${day}.json`,'rqaba-backup-latest.json']){const fh=await AB.h.getFileHandle(nm,{create:true});const w=await fh.createWritable();await w.write(txt);await w.close()}
+ const txt=JSON.stringify(D);if(AB.kind==='file'){const w=await AB.h.createWritable();await w.write(txt);await w.close()}else for(const nm of[`rqaba-backup-${day}.json`,'rqaba-backup-latest.json']){const fh=await AB.h.getFileHandle(nm,{create:true});const w=await fh.createWritable();await w.write(txt);await w.close()}
  AB.last=Date.now();await kset('last',AB.last);AB.done=true;try{vt('✓ تم تحديث النسخة الاحتياطية بتاريخ '+stamp(AB.last)+' في «'+AB.name+'»','ok')}catch(e){}try{if(V.page==='backups')render()}catch(e){}return true}
 async function perm(ask){if(!AB.h)return false;try{const o={mode:'readwrite'};let p=await AB.h.queryPermission(o);if(p!=='granted'&&ask)p=await AB.h.requestPermission(o);return p==='granted'}catch(e){return false}}
 async function run(ask){try{if(AB.done)return;if(await perm(ask))await write()}catch(e){console.warn('autobk',e);try{vt('تعذّر تحديث النسخة الاحتياطية: '+(e.message||e),'warn')}catch(_){}}}
 async function choose(){if(!supported()){vt('المتصفح لا يدعم اختيار مجلد — استخدم Chrome أو Edge','warn');return}
- try{const h=await window.showDirectoryPicker({id:'rqaba-autobk',mode:'readwrite',startIn:'documents'});AB.h=h;AB.name=h.name;AB.done=false;await kset('h',h);await kset('name',h.name);await run(true)}catch(e){if(e&&e.name!=='AbortError')vt('تعذّر اختيار المجلد','warn')}}
-ACT.abChoose=()=>choose();ACT.abNow=async()=>{AB.done=false;await run(true)};
+ try{const h=await window.showDirectoryPicker({id:'rqaba-autobk',mode:'readwrite',startIn:'documents'});AB.h=h;AB.name=h.name;AB.kind='dir';AB.done=false;await kset('h',h);await kset('name',h.name);await kset('kind','dir');await run(true)}catch(e){if(e&&e.name!=='AbortError')vt('تعذّر اختيار المجلد','warn')}}
+async function chooseFile(){if(typeof window.showSaveFilePicker!=='function'){vt('المتصفح لا يدعم اختيار ملف — استخدم Chrome أو Edge','warn');return}
+ try{const h=await window.showSaveFilePicker({id:'rqaba-autobk-f',suggestedName:'rqaba-backup.json',types:[{description:'نسخة احتياطية',accept:{'application/json':['.json']}}]});AB.h=h;AB.name=h.name;AB.kind='file';AB.done=false;await kset('h',h);await kset('name',h.name);await kset('kind','file');await run(true)}catch(e){if(e&&e.name!=='AbortError')vt('تعذّر اختيار الملف','warn')}}
+ACT.abChoose=()=>choose();ACT.abChooseFile=()=>chooseFile();ACT.abNow=async()=>{AB.done=false;await run(true)};
 window.__ab=AB;
 /* عند الفتح: نكتب مباشرة إن كان الإذن قائماً، وإلا عند أول نقرة (يتطلب المتصفح نقرة لمنح الإذن) */
-(async()=>{try{AB.h=await kget('h');AB.name=(await kget('name'))||'';AB.last=(await kget('last'))||0
- if(AB.h){await run(false);if(!AB.done){const g=async()=>{document.removeEventListener('pointerdown',g,true);document.removeEventListener('keydown',g,true);await run(true)};document.addEventListener('pointerdown',g,true);document.addEventListener('keydown',g,true)}}
+(async()=>{try{AB.h=await kget('h');AB.name=(await kget('name'))||'';AB.kind=(await kget('kind'))||'dir';AB.last=(await kget('last'))||0
+ if(AB.h){await run(false);if(!AB.done){setTimeout(()=>{if(!AB.done)try{vt('سيتم تحديث النسخة الاحتياطية في «'+AB.name+'» عند أول نقرة — اختر «السماح في كل زيارة» إن سألك المتصفح','warn')}catch(_){}},2500);const g=async()=>{document.removeEventListener('pointerdown',g,true);document.removeEventListener('keydown',g,true);await run(true)};document.addEventListener('pointerdown',g,true);document.addEventListener('keydown',g,true)}}
  else{const k='v2abAsk';const td=new Date().toDateString();if(localStorage.getItem(k)!==td&&supported()){localStorage.setItem(k,td);setTimeout(async()=>{if(document.querySelector('#v2modal .modal,.rl9-ov,.fr9-ov'))return
-  const ok=await vModal({icon:'shield-check',title:'النسخ الاحتياطي التلقائي',text:'اختر مكاناً واحداً (مثل مجلد على OneDrive أو قرص خارجي) تُحفظ فيه نسخة احتياطية من بيانات النظام تلقائياً عند كل فتح. تختاره مرة واحدة فقط.',actions:[{label:'اختيار المكان',cls:'btn-primary',icon:'folder',result:'c'},{label:'لاحقاً',result:null}]});if(ok==='c')choose()},4000)}}}catch(e){console.warn('ab-init',e)}})();
+  const ok=await vModal({icon:'shield-check',title:'النسخ الاحتياطي التلقائي',text:'اختر ملفاً أو مجلداً (مثلاً على OneDrive) تُحفظ فيه نسخة احتياطية من بيانات النظام تلقائياً عند كل فتح. تختاره مرة واحدة فقط.',actions:[{label:'اختيار ملف',cls:'btn-primary',icon:'file',result:'f'},{label:'اختيار مجلد',cls:'btn-outline',icon:'folder',result:'c'},{label:'لاحقاً',result:null}]});if(ok==='c')choose();else if(ok==='f')chooseFile()},4000)}}}catch(e){console.warn('ab-init',e)}})();
 /* بطاقة في صفحة النسخ الاحتياطية */
 function deco(){try{const p=document.querySelector('#v2 .bk9 .panel-body');if(!p||p.querySelector('.ab9'))return
- p.insertAdjacentHTML('beforeend',`<div class="ab9">${ic('folder','ico-sm')}<div style="flex:1;min-width:220px"><b>مكان النسخ التلقائي عند كل فتح:</b> ${AB.h?`<span>«${h(AB.name)}»</span>`:'<span class="no">لم يُختر بعد</span>'}<div class="s">${AB.last?`<span class="ok">آخر تحديث: ${stamp(AB.last)}</span>`:'لم تُحفظ نسخة بعد'} — يُحفظ ملف لكل يوم وملف «rqaba-backup-latest.json» بآخر نسخة</div></div>
- ${AB.h?`<button class="btn btn-sm btn-primary" data-v2a="abNow">${ic('save')}تحديث الآن</button><button class="btn btn-sm btn-outline" data-v2a="abChoose">تغيير المكان</button>`:`<button class="btn btn-sm btn-primary" data-v2a="abChoose">${ic('folder')}اختيار المكان</button>`}</div>`)}catch(e){}}
+ p.insertAdjacentHTML('beforeend',`<div class="ab9">${ic('folder','ico-sm')}<div style="flex:1;min-width:220px"><b>مكان النسخ التلقائي عند كل فتح:</b> ${AB.h?`<span>${AB.kind==='file'?'الملف':'المجلد'} «${h(AB.name)}»</span>`:'<span class="no">لم يُختر بعد</span>'}<div class="s">${AB.last?`<span class="ok">آخر تحديث: ${stamp(AB.last)}</span>`:'لم تُحفظ نسخة بعد'} — ${AB.kind==='file'?'يُحدَّث الملف نفسه بآخر نسخة عند كل فتح':'يُحفظ ملف لكل يوم وملف «rqaba-backup-latest.json» بآخر نسخة'}</div></div>
+ ${AB.h?`<button class="btn btn-sm btn-primary" data-v2a="abNow">${ic('save')}تحديث الآن</button><button class="btn btn-sm btn-outline" data-v2a="abChooseFile">تغيير إلى ملف</button><button class="btn btn-sm btn-outline" data-v2a="abChoose">تغيير إلى مجلد</button>`:`<button class="btn btn-sm btn-primary" data-v2a="abChooseFile">${ic('file')}اختيار ملف</button><button class="btn btn-sm btn-outline" data-v2a="abChoose">${ic('folder')}اختيار مجلد</button>`}</div>`)}catch(e){}}
 try{const _r=render;render=function(){const x=_r.apply(this,arguments);setTimeout(deco,90);return x}}catch(e){}
 new MutationObserver(()=>{if(document.querySelector('#v2 .bk9 .panel-body:not(:has(.ab9))'))deco()}).observe(document.body,{childList:true,subtree:true});
 
