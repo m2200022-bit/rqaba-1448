@@ -4525,6 +4525,60 @@ body.rl-view #v2 [data-v2a="publish"],body.rl-view #v2 [data-v2a="pubManual"],bo
 #v2 .pb9-a button:hover{background:#146B4F;color:#fff}
 #v2 .pb9-f{border-top:1px dashed #E1ECE6;margin-top:6px;padding-top:8px}
 #v2 .cf9.solo{grid-template-columns:1fr}
+
+/* v2zu — حقل التاريخ يوم/شهر/سنة */
+#v2 .dt9w,.dt9w{position:relative;display:inline-block;vertical-align:middle;max-width:100%}
+#v2 .dt9w.blk,.dt9w.blk{display:block;width:100%}
+#v2 .dt9w.blk > input.dt9i,.dt9w.blk > input.dt9i{width:100%;box-sizing:border-box}
+#v2 input.dt9i,input.dt9i{color:transparent !important;caret-color:transparent}
+#v2 input.dt9i::-webkit-datetime-edit,input.dt9i::-webkit-datetime-edit{opacity:0}
+#v2 input.dt9i:focus::-webkit-datetime-edit,input.dt9i:focus::-webkit-datetime-edit{opacity:0}
+#v2 .dt9o,.dt9o{position:absolute;inset:0 38px 0 10px;display:flex;align-items:center;justify-content:flex-start;gap:8px;pointer-events:none;direction:rtl;white-space:nowrap;overflow:hidden;font:inherit;font-size:13.5px;color:#1E2A24}
+#v2 .dt9o b,.dt9o b{font-weight:700}#v2 .dt9o bdi,.dt9o bdi{direction:ltr;unicode-bidi:isolate}
+#v2 .dt9o small,.dt9o small{font-size:11.5px;color:#6B7A72}
+#v2 .dt9o i,.dt9o i{font-style:normal;color:#9AA7A0}
+#v2 .dt9o.nar small,.dt9o.nar small{display:none}
+/* اعتماد مجموعة */
+#v2 .ba9-b{display:inline-flex;align-items:center;gap:4px;margin-inline-start:8px;border:1px solid #D9C48F;background:#FFF8E6;color:#7A5A12;border-radius:999px;padding:2px 10px;font:700 11.5px inherit;font-family:inherit;cursor:pointer;vertical-align:middle;white-space:nowrap}
+#v2 .ba9-b:hover{background:#146B4F;border-color:#146B4F;color:#fff}
+#v2 .ba9-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+#v2 .ba9-sel{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#56625C}
+#v2 .ba9-note{font-size:12px;color:#56625C;background:#F2F7F4;border-radius:8px;padding:6px 10px;margin-bottom:8px}
+#v2 .ba9-list{display:flex;flex-direction:column;gap:6px;max-height:52vh;overflow:auto}
+#v2 .ba9-r{display:grid;grid-template-columns:22px 32px 1fr auto;gap:8px;align-items:center;padding:8px 10px;border:1px solid #E1ECE6;border-radius:10px;background:#fff;cursor:pointer}
+#v2 .ba9-r.on{border-color:#146B4F;background:#F2F7F4}
+#v2 .ba9-r.dis{opacity:.6;cursor:not-allowed}
+#v2 .ba9-r input{width:17px;height:17px;accent-color:#146B4F}
+#v2 .ba9-i{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:#E5F2EB;color:#146B4F}
+#v2 .ba9-t b,#v2 .ba9-r b{font-size:13.5px}
+#v2 .ba9-r small{display:block;font-size:12px;color:#6B7A72}
+#v2 .ba9-f{display:flex;gap:6px;flex-wrap:wrap;margin-top:3px}
+#v2 .ba9-f em{font-style:normal;display:inline-flex;align-items:center;gap:3px;font-size:11.5px;border-radius:999px;padding:1px 8px}
+#v2 .ba9-f em.ok{background:#E5F2EB;color:#0E5A43}
+#v2 .ba9-f em.sig{background:#FDECEE;color:#B3261E}
+#v2 .ba9-f em.pc{background:#FFF5E5;color:#8A5A0C}
+#v2 .ba9-res{display:flex;flex-direction:column;gap:5px;max-height:50vh;overflow:auto}
+#v2 .ba9-res > div{display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:8px;font-size:13px}
+#v2 .ba9-res > div.ok{background:#F2F7F4}#v2 .ba9-res > div.bad{background:#FFF5F6}
+#v2 .ba9-res small{color:#6B7A72}
+/* اختيار أعضاء فريق المعاينة */
+#v2 .mp9{border:1px solid #E1ECE6;border-radius:12px;padding:10px;margin-top:10px;background:#FAFCFB}
+#v2 .mp9-h{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+#v2 .mp9-h .lbl{display:inline-flex;align-items:center;gap:5px;font-weight:700}
+#v2 .mp9-q{display:flex;gap:8px;align-items:center;font-size:12px}
+#v2 .mp9-g{margin-top:6px}
+#v2 .mp9-gh{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#0E5A43;margin-bottom:4px}
+#v2 .mp9-l{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px}
+#v2 .mp9-c{display:grid;grid-template-columns:auto 28px 1fr;gap:6px;align-items:center;padding:6px 8px;border:1px solid #E1ECE6;border-radius:10px;background:#fff;cursor:pointer;font-size:12.5px}
+#v2 .mp9-c.on{border-color:#146B4F;background:#EEF6F1}
+#v2 .mp9-c input{accent-color:#146B4F}
+#v2 .mp9-c .avatar{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#E5F2EB;color:#146B4F;font-weight:800}
+#v2 .mp9-c small{display:block;font-size:11px;color:#6B7A72}
+#v2 .bk2:has(#bk_mem) .field:has(#bk_team){display:none}
+#v2 #bk_plc{min-width:280px;border:1px solid #E1ECE6;border-radius:8px;padding:6px 10px;font:inherit}
+#v2 #bk_plid{border:1px solid #E1ECE6;border-radius:8px;padding:6px 10px;font:inherit}
+#v2 .bk2:has(#bk_mem) .bk2top .field:has(#bk_c){display:none}
+#v2 .mp9 .link{font-size:12px}
 </style></head>
 <body>
 <div id="spl86" class="no-print"><div><img src="data:image/png;base64,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" alt=""><b>بوابة الرقابة والتفتيش</b><i></i></div></div>
@@ -7114,7 +7168,7 @@ const trs=sec.rows.map(r=>{n++
 return'<tr>'+'<td data-k="n"><span class="n">'+pad(n)+'</span></td>'+heads.map(c=>cell(c,r)).join('')+'</tr>'}).join('')
 return`<section class="sec ${esc(sec.theme)}">\n      <div class="sec-head">${IC[sec.icon]||''}<span>${esc(sec.title)}</span></div>\n      ${M.showSecMeta?`<div class="sec-meta"><span>الحملات: <b>${pad(sec.rows.length)}</b></span><span>المواقع: <b>${pad(uniqueSites(sec.rows))}</b></span></div>`:''}\n      <table class="grid"><thead><tr><th>م</th>${heads.map(c=>`<th>${esc(c.label)}</th>`).join('')}</tr></thead><tbody>${trs||`<tr><td colspan="${heads.length+1}" class="muted">لا توجد حملات في هذا القسم</td></tr>`}</tbody></table>\n    </section>`}).join('')
 const qr=M.qrUrl?qrSvg(M.qrUrl):''
-$('#poster').innerHTML=`\n   <div class="pattern"></div>\n   ${M.showLogos?`<div class="logos"><img src="${ASSETS.office}" alt="${esc(M.office)}"><img class="min" src="${ASSETS.ministry}" alt="وزارة الأوقاف والشؤون الإسلامية"></div>`:''}\n   <header class="head">\n     ${M.showHero?`<div class="hero" style="background-image:url(${ASSETS.hero})"></div>`:'<div></div>'}\n     <div class="head-text">\n       ${M.showLogos?'':`<div class="office">${esc(M.office)}</div>`}\n       ${DOME}\n       <h1 class="title">${esc(M.title)}</h1>\n       <div class="season">${ORN(0)}<span>${esc(M.season)}</span>${ORN(1)}</div>\n       <p class="subtitle">${esc(M.subtitle)}</p>\n     </div>\n   </header>\n   <div class="stats">\n     <div class="stat"><div><div class="lbl">${esc(M.statSitesLabel)}</div><div class="num">${pad(uniqueSites(rows))}</div><div class="unit">موقع إقامة</div></div><div class="ico">${IC.pin}</div></div>\n     <div class="stat prep"><div><div class="lbl">${esc(M.preparedLabel)}</div><div class="prep-badge">${IC.team}<span>${esc(M.preparedBy)}</span></div></div></div>\n     <div class="stat"><div class="ico">${IC.tower}</div><div><div class="lbl">${esc(M.statCampLabel)}</div><div class="num">${pad(rows.length)}</div><div class="unit">حملة</div></div></div>\n   </div>\n   ${secHtml}\n   <footer class="foot">\n     <div class="pray">${esc(M.footer1)}<br>${esc(M.footer2)}</div>\n     ${MOSQUE}\n     <div class="qrbox">${qr?`<div class="t">${esc(M.qrLabel1)}<br>${esc(M.qrLabel2)}</div><div class="qr">${qr}</div>`:''}</div>\n     ${M.showUpdated?`<div class="updated">آخر تحديث: ${new Date(D.updatedAt||Date.now()).toLocaleDateString('ar-QA-u-nu-latn',{year:'numeric',month:'long',day:'numeric'})}</div>`:''}\n   </footer>`
+$('#poster').innerHTML=`\n   <div class="pattern"></div>\n   ${M.showLogos?`<div class="logos"><img src="${ASSETS.office}" alt="${esc(M.office)}"><img class="min" src="${ASSETS.ministry}" alt="وزارة الأوقاف والشؤون الإسلامية"></div>`:''}\n   <header class="head">\n     ${M.showHero?`<div class="hero" style="background-image:url(${ASSETS.hero})"></div>`:'<div></div>'}\n     <div class="head-text">\n       ${M.showLogos?'':`<div class="office">${esc(M.office)}</div>`}\n       ${DOME}\n       <h1 class="title">${esc(M.title)}</h1>\n       <div class="season">${ORN(0)}<span>${esc(M.season)}</span>${ORN(1)}</div>\n       <p class="subtitle">${esc(M.subtitle)}</p>\n     </div>\n   </header>\n   <div class="stats">\n     <div class="stat"><div><div class="lbl">${esc(M.statSitesLabel)}</div><div class="num">${pad(uniqueSites(rows))}</div><div class="unit">موقع إقامة</div></div><div class="ico">${IC.pin}</div></div>\n     <div class="stat prep"><div><div class="lbl">${esc(M.preparedLabel)}</div><div class="prep-badge">${IC.team}<span>${esc(M.preparedBy)}</span></div></div></div>\n     <div class="stat"><div class="ico">${IC.tower}</div><div><div class="lbl">${esc(M.statCampLabel)}</div><div class="num">${pad(rows.length)}</div><div class="unit">حملة</div></div></div>\n   </div>\n   ${secHtml}\n   <footer class="foot">\n     <div class="pray">${esc(M.footer1)}<br>${esc(M.footer2)}</div>\n     ${MOSQUE}\n     <div class="qrbox">${qr?`<div class="t">${esc(M.qrLabel1)}<br>${esc(M.qrLabel2)}</div><div class="qr">${qr}</div>`:''}</div>\n     ${M.showUpdated?`<div class="updated">آخر تحديث: ${new Date(D.updatedAt||Date.now()).toLocaleDateString('en-GB')}م</div>`:''}\n   </footer>`
 document.title=M.title+' '+M.season
 if(typeof curView==="undefined"||curView==="poster")applyPagePoster()}function cell(c,r){const v=r[c.key],L=esc(c.label)
 switch(c.key){case'campaign':return`<td data-k="campaign"><span class="camp">${esc(v)}</span></td>`
@@ -7353,7 +7407,7 @@ function frame(o){const M=D.meta
 const qr=M.qrUrl?qrSvg(M.qrUrl):''
 const big=[o.s1,o.s2].filter(Boolean).map((x,i)=>`<div class="ct big ${i?'b2':''}"><span class="ci">${x.ico}</span><div><b>${esc(x.num)}</b><span>${esc(x.label)}</span><small>${esc(x.unit)}</small></div></div>`).join('')
 const sm=(o.strip||[]).map(k=>`<div class="ct ${k.c||''}"><span class="ci sm">${ui(k.i)}</span><div><b>${esc(k.n)}</b><span>${esc(k.l)}</span></div></div>`).join('')
-return`<div class="cmpf"><div class="pattern"></div>\n   <header class="chead">${M.showHero?`<div class="chero" style="background-image:url(${ASSETS.hero})"></div>`:''}\n    <div class="ctext">${M.showLogos?`<div class="clogos"><img src="${ASSETS.office}" alt=""><i></i><img class="min" src="${ASSETS.ministry}" alt=""></div>`:''}\n     <h1 class="ctitle">${esc(o.title)}</h1><div class="cseason">${ORN(0)}<span>لموسم ${esc(S().seasonH)} هـ</span>${ORN(1)}</div>\n     <p class="csub">${esc(o.subtitle)}</p><span class="cprep">${IC.team}<span>${esc(M.preparedLabel)}: <b>${esc(M.preparedBy)}</b></span></span></div></header>\n   <div class="cst">${big}${sm}</div>\n   ${o.body}\n   <footer class="cfoot1"><span class="cf-m">${MOSQUE}</span><span class="pray">${esc(M.footer1)} — ${esc(M.footer2)}</span><span class="cf-d">تاريخ الإصدار: ${(new Date).toLocaleDateString('ar-QA-u-nu-latn',{year:'numeric',month:'long',day:'numeric'})}</span>${qr?`<span class="cf-q">${qr}</span>`:''}</footer></div>`}const BIGDOC='<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M23 4H10a3 3 0 0 0-3 3v26a3 3 0 0 0 3 3h20a3 3 0 0 0 3-3V14z"/><path d="M23 4v10h10M13 21h14M13 27h10"/></svg>'
+return`<div class="cmpf"><div class="pattern"></div>\n   <header class="chead">${M.showHero?`<div class="chero" style="background-image:url(${ASSETS.hero})"></div>`:''}\n    <div class="ctext">${M.showLogos?`<div class="clogos"><img src="${ASSETS.office}" alt=""><i></i><img class="min" src="${ASSETS.ministry}" alt=""></div>`:''}\n     <h1 class="ctitle">${esc(o.title)}</h1><div class="cseason">${ORN(0)}<span>لموسم ${esc(S().seasonH)} هـ</span>${ORN(1)}</div>\n     <p class="csub">${esc(o.subtitle)}</p><span class="cprep">${IC.team}<span>${esc(M.preparedLabel)}: <b>${esc(M.preparedBy)}</b></span></span></div></header>\n   <div class="cst">${big}${sm}</div>\n   ${o.body}\n   <footer class="cfoot1"><span class="cf-m">${MOSQUE}</span><span class="pray">${esc(M.footer1)} — ${esc(M.footer2)}</span><span class="cf-d">تاريخ الإصدار: ${(new Date).toLocaleDateString('en-GB')}م</span>${qr?`<span class="cf-q">${qr}</span>`:''}</footer></div>`}const BIGDOC='<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><path d="M23 4H10a3 3 0 0 0-3 3v26a3 3 0 0 0 3 3h20a3 3 0 0 0 3-3V14z"/><path d="M23 4v10h10M13 21h14M13 27h10"/></svg>'
 const BIGCHECK='<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="3" width="18" height="7" rx="1.5"/><path d="M29 6h3a3 3 0 0 1 3 3v25a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V9a3 3 0 0 1 3-3h3"/><path d="M13 23l5 5 9-10"/></svg>'
 const VIEWS=['home','poster','visits','report','status','complaints','campreps','register','files','arrival','lists','viewer']
 function applyTheme(){document.body.classList.toggle('theme-teal',S().theme==='teal')}function renderHeaderTexts(){applyTheme()
@@ -20236,9 +20290,9 @@ const tISO=()=>todayISO()
 const addD=(iso,n)=>{const d=new Date((iso||tISO())+'T12:00:00')
 d.setDate(d.getDate()+n)
 return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate())}
-const fH=new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura-nu-latn',{day:'numeric',month:'long',year:'numeric'})
-const fG=new Intl.DateTimeFormat('ar-EG-u-nu-latn',{day:'numeric',month:'long',year:'numeric'})
-const fS=new Intl.DateTimeFormat('ar-EG-u-nu-latn',{day:'numeric',month:'short'})
+const fH={format:d=>{const p=new Intl.DateTimeFormat('en-u-ca-islamic-umalqura-nu-latn',{day:'numeric',month:'numeric',year:'numeric'}).formatToParts(d);const g=t=>parseInt((p.find(x=>x.type===t)||{}).value);return pad2(g('day'))+'/'+pad2(g('month'))+'/'+g('year')+' هـ'}}
+const fG={format:d=>pad2(d.getDate())+'/'+pad2(d.getMonth()+1)+'/'+d.getFullYear()}
+const fS={format:d=>pad2(d.getDate())+'/'+pad2(d.getMonth()+1)}
 const hL=iso=>{try{return fH.format(new Date(iso+'T12:00:00')).replace(' هـ','هـ')}catch(e){return''}}
 const gL=iso=>{try{return fG.format(new Date(iso+'T12:00:00'))+'م'}catch(e){return''}}
 const wd=iso=>dayName(iso)
@@ -20634,7 +20688,8 @@ if(String(err.message)!=='DUP_CANCEL')vt('تعذر إنشاء المحضر','err
 return}finally{V.internal=false}if(!r)return
 if(p){try{buildFollow(r,p)}catch(err){console.error(err)}}if(e.cid&&e.v2team&&e.v2team!==sec(e.cid)){const tm=teamOf(e.v2team)
 const L=(D.inspectors||[]).filter(i=>i.team===tm.id).map(i=>i.id)
-if(L.length)r.members=L}e.v2rep=r.id
+if(L.length)r.members=L}if(e.v2mem&&e.v2mem.length)r.members=e.v2mem.slice()
+e.v2rep=r.id
 e.done=true
 r.evId=e.id
 r.mt=Date.now()
@@ -22352,9 +22407,9 @@ r.items[0].text=v3Sample(r)
 r.items[0].title='الواقعة المرصودة'
 touch(r)
 render()}
-const MSH=[['tarwiya','يوم التروية','tent'],['arafat','عرفة','mountain'],['mina','منى','tent-tree'],['muzdalifa','مزدلفة','moon-star']]
-const BK_SEC=[['field','زيارات ميدانية','footprints',[['visit','زيارة حملة'],['buses','تقرير الباصات'],['receive','استقبال وتسكين الحجاج'],['violation','إخطار برصد مخالفة']]],['msh','المشاعر المقدسة','tent',[['mashaer','زيارة حملة بالمشعر'],['campready','معاينة مخيمات المشاعر المقدسة']]],['int','مقابلات وشكاوى','messages-square',[['interview','مقابلة حجاج'],['complaint','متابعة شكوى حاج']]],['oth','تقارير أخرى','files',[['period','تقرير أعمال الوحدة حسب الفترة'],['final','التقرير النهائي للموسم'],['other','محضر آخر']]]]
-const NOCAMP=['campready','period','final','other']
+const MSH=[['tarwiya','يوم التروية','tent'],['arafat','عرفة','mountain'],['mina','منى','tent-tree']]
+const BK_SEC=[['field','زيارات ميدانية','footprints',[['visit','زيارة حملة'],['buses','تقرير الباصات'],['receive','استقبال وتسكين الحجاج'],['violation','إخطار برصد مخالفة']]],['msh','المشاعر المقدسة','tent',[['mashaer','زيارة حملة بالمشعر'],['campready','معاينة مخيمات المشاعر المقدسة'],['muzdalifa','يوم مزدلفة (على الموقع)']]],['int','مقابلات وشكاوى','messages-square',[['interview','مقابلة حجاج'],['complaint','متابعة شكوى حاج']]],['oth','تقارير أخرى','files',[['period','تقرير أعمال الوحدة حسب الفترة'],['final','التقرير النهائي للموسم'],['other','محضر آخر']]]]
+const NOCAMP=['campready','muzdalifa','interview','period','final','other']
 const OTHER2=['interview','period','final','other']
 const BK_IC={mashaer:'tent',complaint:'message-square-warning',period:'calendar-range',final:'book-marked',other:'file-pen-line'}
 ACT.book=async b=>{const d=b.dataset||{}
@@ -22373,7 +22428,8 @@ const n=C.filter(c=>repsOf(c.id).some(x=>ts.includes(x.type)&&x.st==='published'
 return`<span class="bk2-n ${n>=C.length&&C.length?'full':''}">صدر لـ <b>${n}</b> من <b>${C.length}</b> حملة</span>`}
 const card=([t,l])=>{const[c,s]=stOf(t)
 return`<label class="bk2c ${tid===t?'on':''}"><input type="radio" name="bk_t" value="${t}" ${tid===t?'checked':''}><span class="bk2i">${ic(TIC[t]||BK_IC[t]||'file-text')}</span><span class="bk2t">${h(t==='violation'?'إخطار برصد مخالفة':l)}</span>${s?`<span class="bk2s ${c}">${s}</span>`:''}${cnt(t)}</label>`}
-const extra=()=>{if(tid==='campready')return`<div class="bk2x"><span class="lbl">المشعر محل المعاينة:</span><div class="seg" id="bk_cpm">${[['mina','مخيمات مشعر منى','tent'],['arafat','مخيمات مشعر عرفة','mountain']].map(([k,l,i])=>`<button type="button" class="${cpm===k?'on':''}" data-v="${k}">${ic(i,'ico-sm')}${l}</button>`).join('')}</div></div>`
+const extra=()=>extra0()+(window.__bkX?window.__bkX(tid):'')
+const extra0=()=>{if(tid==='campready')return`<div class="bk2x"><span class="lbl">المشعر محل المعاينة:</span><div class="seg" id="bk_cpm">${[['mina','مخيمات مشعر منى','tent'],['arafat','مخيمات مشعر عرفة','mountain'],['muzdalifa','مخيمات مشعر مزدلفة','moon-star']].map(([k,l,i])=>`<button type="button" class="${cpm===k?'on':''}" data-v="${k}">${ic(i,'ico-sm')}${l}</button>`).join('')}</div></div>`
 if(tid==='mashaer')return`<div class="bk2x"><span class="lbl">اختر المشعر:</span><div class="seg" id="bk_msh">${MSH.map(([k,l,i])=>`<button type="button" class="${msh===k?'on':''}" data-v="${k}">${ic(i,'ico-sm')}${l}</button>`).join('')}</div>${msh&&typeof mshBulkBtn==='function'?mshBulkBtn(msh):''}</div>`
 if(tid==='complaint'){const L=(D.complaints||[]).filter(c=>c.status!=='closed'&&(!cid||c.campaignId===cid))
 return`<div class="bk2x"><span class="lbl">الشكوى:</span><select id="bk_cmp"><option value="">— اختر الشكوى —</option>${L.map(c=>`<option value="${c.id}">${h((typeof cNo==='function'?cNo(c)+' — ':'')+(c.name||'')+' — '+(c.campaign||'')+' — '+String(c.text||'').slice(0,50))}</option>`).join('')}</select>${L.length?'':'<span class="muted">لا توجد شكاوى مفتوحة'+(cid?' لهذه الحملة':'')+' — أضفها من صفحة الشكاوى</span>'}</div>`}if(tid==='period')return`<div class="bk2x"><span class="lbl">الفترة من</span><input type="date" id="bk_from" value="${addD(tISO(),-6)}"><span class="lbl">إلى</span><input type="date" id="bk_to" value="${tISO()}"></div>`
@@ -22408,8 +22464,10 @@ return}let t=tid
 if(t==='mashaer'){if(!msh){vt('اختر المشعر: يوم التروية / عرفة / منى / مزدلفة','warn')
 return}t=msh}const c=$i('bk_c').value
 if(!NOCAMP.includes(t)&&!['interview','complaint'].includes(t)&&!c){vt('اختر الحملة','warn')
-return}const o={now:now,type:t,cid:t==='campready'||OTHER2.includes(t)&&t!=='interview'?'':c,date:$i('bk_d').value||tISO(),time:$i('bk_tm').value,team:$i('bk_team').querySelector('.on').dataset.v,note:$i('bk_n').value.trim(),arr:arrVal()}
-if(t==='campready'){if(!cpm){vt('اختر المشعر: منى أو عرفة','warn')
+return}const o={now:now,type:t,cid:NOCAMP.includes(t)||OTHER2.includes(t)?'':c,date:$i('bk_d').value||tISO(),time:$i('bk_tm').value,team:$i('bk_team').querySelector('.on').dataset.v,note:$i('bk_n').value.trim(),arr:arrVal(),mem:window.__bkMem?window.__bkMem(t):null,plid:($i('bk_plid')||{}).value||'',plc:(($i('bk_plc')||{}).value||'').trim()}
+if(o.mem&&!o.mem.length){vt('اختر عضواً واحداً على الأقل في فريق المعاينة','warn')
+return}
+if(t==='campready'){if(!cpm){vt('اختر المشعر: منى أو عرفة أو مزدلفة','warn')
 return}o.cpm=cpm}if(t==='complaint'){o.cmp=($i('bk_cmp')||{}).value
 if(!o.cmp){vt('اختر الشكوى','warn')
 return}}if(t==='period'){o.from=$i('bk_from').value
@@ -22419,7 +22477,7 @@ return}}return o}if(!ok)return
 if(ok.type==='complaint'){setTimeout(()=>cmpAction(ok.cmp),60)
 return}if(OTHER2.includes(ok.type)){let rep
 try{V.internal=true
-rep=newReport({type:ok.type,campaignId:ok.cid||undefined,date:ok.date,time:ok.time,skipDup:true,noFollow:true,from:ok.from,to:ok.to})}catch(e){console.error(e)}finally{V.internal=false}if(rep){if(ok.type==='period'){rep.from=ok.from
+rep=newReport({type:ok.type,campaignId:ok.cid||undefined,date:ok.date,time:ok.time,skipDup:true,noFollow:true,from:ok.from,to:ok.to})}catch(e){console.error(e)}finally{V.internal=false}if(rep){try{window.__bkPost&&window.__bkPost(rep,ok)}catch(_){}if(ok.type==='period'){rep.from=ok.from
 rep.to=ok.to
 try{genWeekly(rep)}catch(e){console.error(e)}}persist()
 go('editor',rep.id)
@@ -22432,7 +22490,7 @@ const pl=ok.type==='campready'?places().find(p=>(p.types||[]).includes('campread
 const e={id:uid(),src:src,done:false,cid:ok.cid,date:ok.date,time:ok.time,type:ok.type,note:ok.note||(src?'زيارة متابعة':''),v2team:ok.team}
 if(pl){e.plid=pl.id
 e.place=pl.name}if(ok.cpm){e.v2msh=ok.cpm
-e.place='مخيمات مشعر '+(ok.cpm==='mina'?'منى':'عرفة')}if(!await confOK([e]))return
+e.place='مخيمات مشعر '+(CP_MSH[ok.cpm]||'')}try{window.__bkEv&&window.__bkEv(e,ok)}catch(_){}if(!await confOK([e]))return
 try{arrApply(ok.cid,ok.arr)}catch(_){}D.schedule=D.schedule||[]
 D.schedule.push(e)
 persist()
@@ -27631,7 +27689,7 @@ try{cmpAction=function(id,inRep){return cmpOne(id,inRep)}}catch(err){console.err
 ACT.cView=b=>cmpOne(b.dataset.id);
 
 /* ===== رقم الإصدار بجوار حالة الحفظ ===== */
-window.__BUILD='2026.11.27-1801';
+window.__BUILD='2026.11.27-2155';
 function verChip(){try{const bar=document.querySelector('#v2 .topbar-actions');if(!bar)return;let v=bar.querySelector('.ver9')
  if(!v){v=document.createElement('span');v.className='ver9';v.title='رقم إصدار النظام — للتأكد أنك تعمل على آخر نسخة';const ref=bar.querySelector('.fs7p')||bar.querySelector('[class*="sync"]')||bar.firstElementChild;ref?ref.insertAdjacentElement('afterend',v):bar.prepend(v)}
  v.innerHTML=`<span>الإصدار <bdi dir="ltr">${window.__BUILD}</bdi></span>`}catch(e){}}
@@ -28085,7 +28143,7 @@ const HM=['محرم','صفر','ربيع الأول','ربيع الآخر','جم�
 let _tw=null;
 function tarwiya(){if(_tw&&_tw.k===todayS())return _tw;const d=new Date();d.setHours(12,0,0,0);
  for(let i=0;i<420;i++){const h=hj(d);if(h&&h.m===12&&h.d===8){_tw={k:todayS(),date:new Date(d),days:i,hy:h.y};return _tw}d.setDate(d.getDate()+1)}return _tw={k:todayS(),date:null,days:null}}
-const PH=[{k:'pre',l:'قبل الوصول',ic:'plane',req:['visit','buses','receive'],note:'استعداد لمرحلة مكة'},{k:'mak',l:'مكة المكرمة',ic:'hotel',req:['visit','buses','receive']},{k:'msh',l:'المشاعر المقدسة',ic:'tent',req:['tarwiya','arafat','muzdalifa']},{k:'dep',l:'المغادرة',ic:'plane-landing',req:['interview']}];
+const PH=[{k:'pre',l:'قبل الوصول',ic:'plane',req:['visit','buses','receive'],note:'استعداد لمرحلة مكة'},{k:'mak',l:'مكة المكرمة',ic:'hotel',req:['visit','buses','receive']},{k:'msh',l:'المشاعر المقدسة',ic:'tent',req:['tarwiya','arafat']},{k:'dep',l:'المغادرة',ic:'plane-landing',req:[]}];
 function autoPhase(){const h=hj(new Date());if(!h)return'pre';if(h.m===12&&h.d>=8&&h.d<=13)return'msh';if(h.m===12&&h.d>13)return'dep';if(h.m===11||h.m===12)return'mak';if(h.m===1&&h.d<=15)return'dep';return'pre'}
 const phase=()=>{const o=D.v2phase;return PH.find(p=>p.k===(o||autoPhase()))||PH[0]};
 window.__phase=()=>phase().k;
@@ -28101,16 +28159,16 @@ function readyBar(cid,big){const x=readiness(cid);return`<div class="rd9 ${big?'
 function homeBox(){const P=phase();const tw=tarwiya();const ap=autoPhase();
  const rows=rowsAll().map(r=>({r,x:readiness(r.id)})).sort((a,b)=>a.x.pct-b.x.pct||(a.r.campaign||'').localeCompare(b.r.campaign||'','ar'));
  const avg=rows.length?Math.round(rows.reduce((s,o)=>s+o.x.pct,0)/rows.length):0;const full=rows.filter(o=>o.x.pct>=100).length;
- const cd=tw.days==null?'':tw.days===0?`<div class="ph9-cd now"><b>اليوم</b><span>يوم التروية</span></div>`:`<div class="ph9-cd"><b>${tw.days}</b><span>${tw.days===1?'يوم':tw.days===2?'يومان':tw.days<=10?'أيام':'يوماً'} على يوم التروية</span><small>8 ذو الحجة ${tw.hy}هـ · <bdi class="dt7" dir="ltr">${pad(tw.date.getDate())}/${pad(tw.date.getMonth()+1)}/${tw.date.getFullYear()}</bdi></small></div>`;
+ const cd=tw.days==null?'':tw.days===0?`<div class="ph9-cd now"><b>اليوم</b><span>يوم التروية</span></div>`:`<div class="ph9-cd"><b>${tw.days}</b><span>${tw.days===1?'يوم':tw.days===2?'يومان':tw.days<=10?'أيام':'يوماً'} على يوم التروية</span><small><bdi class="dt7" dir="ltr">08/12/${tw.hy}</bdi>هـ · <bdi class="dt7" dir="ltr">${pad(tw.date.getDate())}/${pad(tw.date.getMonth()+1)}/${tw.date.getFullYear()}</bdi>م</small></div>`;
  const hh=hj(new Date());
  const list=rows.slice(0,6).map(o=>`<button type="button" class="rd9-row" data-v2camp="${h(o.r.id)}"><span class="nm">${h(o.r.campaign||'')}</span><span class="rd9-t sm"><i class="p-${pcCls(o.x.pct)}" style="width:${o.x.pct}%"></i></span><span class="rd9-p p-${pcCls(o.x.pct)}">${o.x.pct}%</span><span class="ms">${o.x.miss.length?'ينقص: '+o.x.miss.map(t=>h(tyS(t))).join('، '):'مكتمل'}</span></button>`).join('');
  return`<section class="ph9" id="ph9">
   <div class="ph9-top"><div class="ph9-steps">${PH.map((p,i)=>`<button type="button" class="ph9-s ${p.k===P.k?'on':''} ${PH.findIndex(q=>q.k===P.k)>i?'past':''}" data-v2a="phSet" data-k="${p.k}" title="${p.k===ap?'المرحلة الحالية حسب التاريخ':'تثبيت هذه المرحلة يدوياً'}">${ic(p.ic,'ico-sm')}<span>${h(p.l)}</span></button>`).join('<i class="ph9-ln"></i>')}</div>
   ${cd}</div>
-  <div class="ph9-sub">${hh?`<span>${ic('calendar-days','ico-sm')}اليوم ${hh.d} ${HM[hh.m-1]} ${hh.y}هـ</span>`:''}${D.v2phase?`<span class="ph9-man">مرحلة مثبّتة يدوياً — <button type="button" class="linkbtn" data-v2a="phSet" data-k="auto">إرجاع للتلقائي</button></span>`:'<span class="muted">تتحدد المرحلة تلقائياً من التاريخ الهجري (أم القرى)</span>'}</div>
+  <div class="ph9-sub">${hh?`<span>${ic('calendar-days','ico-sm')}اليوم <bdi class="dt7" dir="ltr">${pad(hh.d)}/${pad(hh.m)}/${hh.y}</bdi>هـ · <bdi class="dt7" dir="ltr">${(()=>{const d=new Date();return pad(d.getDate())+'/'+pad(d.getMonth()+1)+'/'+d.getFullYear()})()}</bdi>م</span>`:''}${D.v2phase?`<span class="ph9-man">مرحلة مثبّتة يدوياً — <button type="button" class="link" data-v2a="phSet" data-k="auto">إرجاع للتلقائي</button></span>`:'<span class="muted">تتحدد المرحلة تلقائياً من التاريخ الهجري (أم القرى)</span>'}</div>
   <div class="ph9-rd"><div class="ph9-rh"><b>${ic('list-checks','ico-sm')}جاهزية الحملات — ${h(P.note||'مرحلة '+P.l)}</b><span>المتوسط <b>${avg}%</b> · مكتملة ${full} من ${rows.length}</span></div>
-   <div class="ph9-rq">المطلوب في هذه المرحلة: ${P.req.filter(has).map(t=>`<span class="chip">${h(tyN(t))}</span>`).join('')}</div>
-   <div class="rd9-list">${list||'<div class="muted">لا توجد حملات</div>'}</div>${rows.length>6?`<button type="button" class="linkbtn ph9-all" data-v2a="rdAll">عرض جاهزية كل الحملات (${rows.length})</button>`:''}</div></section>`}
+   <div class="ph9-rq">${P.req.filter(has).length?'المطلوب لكل حملة في هذه المرحلة: '+P.req.filter(has).map(t=>`<span class="chip">${h(tyN(t))}</span>`).join(''):'لا توجد محاضر مطلوبة لكل حملة في هذه المرحلة — محاضر المرحلة تُصدر على المواقع (مقابلة الحجاج، مزدلفة).'}</div>
+   <div class="rd9-list">${list||'<div class="muted">لا توجد حملات</div>'}</div>${rows.length>6?`<button type="button" class="link ph9-all" data-v2a="rdAll">عرض جاهزية كل الحملات (${rows.length})</button>`:''}</div></section>`}
 ACT.rdAll=async()=>{const rows=rowsAll().map(r=>({r,x:readiness(r.id)})).sort((a,b)=>a.x.pct-b.x.pct);
  await vModal({icon:'gauge',title:'جاهزية الحملات — '+phase().l,wide:true,body:`<div class="rd9-list all">${rows.map(o=>`<button type="button" class="rd9-row" data-v2camp="${h(o.r.id)}" data-v2close="1"><span class="nm">${h(o.r.campaign||'')}</span><span class="rd9-t sm"><i class="p-${pcCls(o.x.pct)}" style="width:${o.x.pct}%"></i></span><span class="rd9-p p-${pcCls(o.x.pct)}">${o.x.pct}%</span><span class="ms">${o.x.miss.length?'ينقص: '+o.x.miss.map(t=>h(tyS(t))).join('، '):'مكتمل'}</span></button>`).join('')}</div>`,actions:[{label:'إغلاق',result:null}]})};
 document.addEventListener('click',e=>{const b=e.target.closest('#v2 [data-v2close][data-v2camp]');if(b){try{vClose(null)}catch(_){}}},true);
@@ -28155,7 +28213,7 @@ const ctOf=cid=>CL().filter(x=>x.cid===cid).sort((a,b)=>b.t-a.t);
 const overdue=x=>x.kind==='prom'&&!x.done&&x.due&&x.due<todayS();
 const fmtT=t=>{const d=new Date(t);return`<bdi class="dt7" dir="ltr">${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}</bdi> ${hm2(d.getHours()*60+d.getMinutes())}`};
 function ctList(cid){const L=ctOf(cid);if(!L.length)return'<div class="muted ct9-empty">لا توجد مراسلات مسجلة بعد مع منسق هذه الحملة</div>';
- return L.map(x=>`<div class="ct9-i k-${x.kind} ${overdue(x)?'late':''} ${x.done?'done':''}"><span class="ct9-ic">${ic(CK[x.kind][1],'ico-sm')}</span><div class="ct9-b"><div class="ct9-m"><b>${h(CK[x.kind][0])}</b><small>${fmtT(x.t)}${x.by?' · '+h(x.by):''}</small></div><div class="ct9-tx">${h(x.text||'')}</div>${x.kind==='prom'?`<div class="ct9-due">${x.done?ic('check','ico-sm')+'تم الوفاء بالوعد':`${ic('calendar-clock','ico-sm')}الموعد المتفق عليه: ${x.due?`<bdi class="dt7" dir="ltr">${gDate(x.due)}</bdi>`:'—'}${overdue(x)?' <b class="red">— متأخر</b>':''} <button type="button" class="linkbtn" data-ct9done="${x.id}">تم الوفاء</button>`}</div>`:''}</div><button type="button" class="ib ct9-del" data-ct9del="${x.id}" title="حذف">${ic('trash-2','ico-sm')}</button></div>`).join('')}
+ return L.map(x=>`<div class="ct9-i k-${x.kind} ${overdue(x)?'late':''} ${x.done?'done':''}"><span class="ct9-ic">${ic(CK[x.kind][1],'ico-sm')}</span><div class="ct9-b"><div class="ct9-m"><b>${h(CK[x.kind][0])}</b><small>${fmtT(x.t)}${x.by?' · '+h(x.by):''}</small></div><div class="ct9-tx">${h(x.text||'')}</div>${x.kind==='prom'?`<div class="ct9-due">${x.done?ic('check','ico-sm')+'تم الوفاء بالوعد':`${ic('calendar-clock','ico-sm')}الموعد المتفق عليه: ${x.due?`<bdi class="dt7" dir="ltr">${gDate(x.due)}</bdi>`:'—'}${overdue(x)?' <b class="red">— متأخر</b>':''} <button type="button" class="link" data-ct9done="${x.id}">تم الوفاء</button>`}</div>`:''}</div><button type="button" class="ib ct9-del" data-ct9del="${x.id}" title="حذف">${ic('trash-2','ico-sm')}</button></div>`).join('')}
 async function ctOpen(cid,kind){const row=rowById(cid)||{};const ph=(row.phone||'').replace(/\D/g,'');
  const body=`<div class="ct9"><div class="ct9-hd"><div><b>${h(row.campaign||'')}</b><small>${ic('user-round','ico-sm')}${h(row.coordinator||'—')}${ph?` · <a href="tel:+974${ph}" data-ct9call="${h(cid)}">${ic('phone','ico-sm')}${h(row.phone)}</a>`:''}</small></div></div>
   <div class="ct9-f"><div class="ct9-k">${Object.entries(CK).map(([k,[l,i]])=>`<label class="ct9-kb"><input type="radio" name="ct9k" value="${k}" ${k===(kind||'call')?'checked':''}>${ic(i,'ico-sm')}${h(l)}</label>`).join('')}</div>
@@ -28302,6 +28360,100 @@ new MutationObserver(()=>{const m=document.querySelector('#v2modal .cc9');if(!m|
  m.insertAdjacentHTML('afterbegin',`<div class="cc9x">${readyBar(id)}<div class="cf9-a"><button type="button" class="btn btn-sm btn-outline" data-ct9open="${h(id)}">${ic('phone','ico-sm')}سجل التواصل${n?' ('+n+')':''}</button><button type="button" class="btn btn-sm btn-primary" data-v2a="campFile" data-cid="${h(id)}">${ic('files','ico-sm')}ملف الحملة PDF</button></div></div>`)}).observe(document.getElementById('v2modal')||document.body,{childList:true,subtree:true});
 try{const _cc=ACT.campCard;if(_cc)ACT.campCard=function(b){window.__cc9id=b&&(b.dataset.v2camp||b.dataset.id);return _cc.apply(this,arguments)}}catch(e){}
 setTimeout(()=>deco(),300);
+}
+
+function v2zuInit(){
+const pad=n=>String(n).padStart(2,'0');
+/* ============ ١) التاريخ: يوم/شهر/سنة للهجري والميلادي في حقول التاريخ ============ */
+const dmy=v=>{if(!v)return'';const[y,m,d]=String(v).split('-');return`${d}/${m}/${y}`};
+function dtUpd(inp){const o=inp.__dt9;if(!o)return;const v=inp.value;let hj='';try{hj=v?hijri(v):''}catch(e){}
+ o.classList.toggle('nar',inp.offsetWidth&&inp.offsetWidth<210);
+ o.innerHTML=v?`<b><bdi dir="ltr">${dmy(v)}</bdi>م</b>${hj?`<small><bdi dir="ltr">${hj.replace(/\s*هـ$/,'')}</bdi>هـ</small>`:''}`:'<i>يوم/شهر/سنة</i>'}
+function dtWrap(inp){if(inp.__dt9||inp.dataset.dt9==='no')return;const w=document.createElement('span');w.className='dt9w';
+ const cs=getComputedStyle(inp);const par=inp.parentElement;const full=cs.display==='block'||(par&&inp.offsetWidth>=par.clientWidth-6&&par.clientWidth>0)||/100%/.test(inp.style.width||'');
+ w.classList.add(full?'blk':'inl');if(inp.style.width&&!/100%/.test(inp.style.width))w.style.width=inp.style.width;
+ par.insertBefore(w,inp);w.appendChild(inp);const o=document.createElement('span');o.className='dt9o';o.setAttribute('aria-hidden','true');w.appendChild(o);inp.__dt9=o;inp.classList.add('dt9i');dtUpd(inp)}
+const SEL='#v2 input[type=date],#v2modal input[type=date],#modBox input[type=date],.modal input[type=date]';
+const dtScan=()=>document.querySelectorAll(SEL).forEach(i=>{if(!i.__dt9&&i.isConnected&&!i.closest('.paper,.fs-sheet'))try{dtWrap(i)}catch(e){}});
+try{const pd=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');Object.defineProperty(HTMLInputElement.prototype,'value',{configurable:true,enumerable:pd.enumerable,get(){return pd.get.call(this)},set(v){pd.set.call(this,v);if(this.__dt9)try{dtUpd(this)}catch(e){}}})}catch(e){}
+document.addEventListener('input',e=>{if(e.target&&e.target.__dt9)dtUpd(e.target)},true);
+document.addEventListener('change',e=>{if(e.target&&e.target.__dt9)dtUpd(e.target)},true);
+document.addEventListener('click',e=>{const i=e.target;if(i&&i.__dt9&&i.showPicker){try{i.showPicker()}catch(_){}}},true);
+let _dtT=0;new MutationObserver(()=>{clearTimeout(_dtT);_dtT=setTimeout(dtScan,40)}).observe(document.body,{childList:true,subtree:true});
+setTimeout(dtScan,400);window.__dtScan=dtScan;
+
+/* ============ ٢) اعتماد مجموعة محاضر مختارة من «جاهزة للاعتماد» ============ */
+const viewer=()=>{try{const m=window.__me&&window.__me();return m&&m.role==='view'}catch(e){return false}};
+const sigMiss=r=>{try{return sigMissing(r)||[]}catch(e){return[]}};
+const nm=r=>r.campaign||r.place||tName(r.type);
+async function bulkOpen(){if(viewer())return vt('صلاحية «اطلاع فقط» لا تسمح بالاعتماد','warn');
+ let A;try{A=apprList()}catch(e){A={ready:[]}}const L=(A.ready||[]).map(x=>x.r);if(!L.length)return vt('لا توجد محاضر جاهزة للاعتماد','warn');
+ const row=r=>{const ms=sigMiss(r);let pc=[];try{pc=window.__preCheck?window.__preCheck(r):[]}catch(e){}
+  return`<label class="ba9-r" data-id="${r.id}"><input type="checkbox" value="${r.id}"><span class="ba9-i">${ic(TIC[r.type]||'file-text','ico-sm')}</span><span class="ba9-t"><b>${h(nm(r))}</b><small>${h(tName(r.type))} · <bdi class="dt7" dir="ltr">${gDate(r.date)}</bdi>م${r.time?' · '+h(r.time):''}</small><span class="ba9-f">${ms.length?`<em class="sig" data-sig="1">${ic('signature','ico-sm')}ينقص توقيع: ${h(ms.join('، '))}</em>`:`<em class="ok">${ic('check','ico-sm')}التوقيعات مكتملة</em>`}${pc.length?`<em class="pc" title="${h(pc.map(x=>x[1]).join(' • '))}">${ic('triangle-alert','ico-sm')}${pc.length} ${pc.length<=2?'نقطة':'نقاط'} للمراجعة</em>`:''}</span></span><button type="button" class="ib ba9-open" data-open="${r.id}" title="فتح المحضر">${ic('eye','ico-sm')}</button></label>`};
+ const body=`<div class="ba9"><div class="ba9-top"><div class="seg" id="ba9m"><button type="button" class="on" data-v="e">${ic('signature','ico-sm')}اعتماد بالتوقيع الإلكتروني</button><button type="button" data-v="m">${ic('pen-tool','ico-sm')}اعتماد دون توقيع (يدوي)</button></div>
+  <div class="ba9-sel"><button type="button" class="link" data-ba="all">تحديد الكل</button><button type="button" class="link" data-ba="none">إلغاء التحديد</button><span id="ba9n">لم يُحدد شيء</span></div></div>
+  <div class="ba9-note" id="ba9note">في الاعتماد الإلكتروني تُضاف توقيعات الأعضاء وتوقيع المعتمد، ويُحفظ PDF الموقّع في المكتبة. المحاضر التي ينقصها توقيع لا تُحدد في هذا الوضع.</div>
+  <div class="ba9-list">${L.map(row).join('')}</div></div>`;
+ let mode='e';
+ const p=vModal({icon:'badge-check',tone:'gold',title:'اعتماد مجموعة محاضر',wide:true,body,actions:[{label:'اعتماد المحدد',cls:'btn-primary',icon:'badge-check',value:()=>{const ids=[...document.querySelectorAll('#v2modal .ba9-r input:checked')].map(x=>x.value);if(!ids.length){vt('حدّد محضراً واحداً على الأقل','warn');return}return{ids,mode}}},{label:'إلغاء',result:false}]});
+ setTimeout(()=>{const box=document.querySelector('#v2modal .ba9');if(!box)return;
+  const sync=()=>{box.querySelectorAll('.ba9-r').forEach(l=>{const dis=mode==='e'&&l.querySelector('[data-sig]');const c=l.querySelector('input');c.disabled=!!dis;if(dis)c.checked=false;l.classList.toggle('dis',!!dis);l.classList.toggle('on',c.checked)});
+   const n=box.querySelectorAll('.ba9-r input:checked').length;box.querySelector('#ba9n').textContent=n?`محدد ${n} من ${L.length}`:'لم يُحدد شيء';
+   box.querySelector('#ba9note').textContent=mode==='e'?'في الاعتماد الإلكتروني تُضاف توقيعات الأعضاء وتوقيع المعتمد، ويُحفظ PDF الموقّع في المكتبة. المحاضر التي ينقصها توقيع لا تُحدد في هذا الوضع.':'في الاعتماد دون توقيع يأخذ كل محضر رقم القيد ويُعتمد، ثم يُنزَّل للتوقيع اليدوي ورفع النسخة الموقعة لاحقاً.'};
+  box.addEventListener('change',sync);
+  box.addEventListener('click',e=>{const s=e.target.closest('#ba9m button');if(s){mode=s.dataset.v;[...s.parentElement.children].forEach(x=>x.classList.toggle('on',x===s));sync();return}
+   const a=e.target.closest('[data-ba]');if(a){box.querySelectorAll('.ba9-r input').forEach(c=>{if(!c.disabled)c.checked=a.dataset.ba==='all'});sync();return}
+   const o=e.target.closest('[data-open]');if(o){e.preventDefault();try{vClose(null)}catch(_){}setTimeout(()=>go('editor',o.dataset.open),80)}});sync()},40);
+ const ok=await p;if(!ok||!ok.ids)return;await bulkRun(ok.ids,ok.mode)}
+async function bulkRun(ids,mode){const res=[];const fu=[];
+ for(let k=0;k<ids.length;k++){const r=repById(ids[k]);if(!r)continue;vt(`اعتماد ${k+1} من ${ids.length}: ${nm(r)}`);
+  let err='';try{err=validate(r)}catch(e){err='تعذر التحقق'}if(err){res.push([r,false,err]);continue}
+  if(mode==='e'){const ms=sigMiss(r);if(ms.length){res.push([r,false,'ينقص توقيع: '+ms.join('، ')]);continue}delete r.v2manual;r.signedAt=Date.now()}else r.v2manual=true;
+  r.st='published';r.publish=true;r.pubAt=Date.now();persist();
+  if(mode==='e'){try{V.internal=true;afterPublish(r)}catch(e){console.error(e)}finally{V.internal=false}}
+  try{if(window.__audit)window.__audit('اعتماد ضمن مجموعة',r)}catch(e){}
+  res.push([r,true,'']);try{if(needsFollow(r))fu.push(r)}catch(e){}}
+ render();
+ if(mode==='e'){for(const[r,ok]of res){if(!ok)continue;try{await libSaveReport(r,true)}catch(e){console.error(e)}}try{chrome()}catch(e){}}
+ const okN=res.filter(x=>x[1]).length;
+ await vModal({icon:okN?'badge-check':'triangle-alert',tone:okN?'ok':'gold',title:`اعتُمد ${okN} من ${res.length}`,wide:true,body:`<div class="ba9-res">${res.map(([r,ok,e])=>`<div class="${ok?'ok':'bad'}">${ic(ok?'check':'x','ico-sm')}<b>${h(nm(r))}</b><small>${h(tName(r.type))}${ok?' — رقم القيد '+h((()=>{try{return regStr(r.no)}catch(_){return r.no||''}})()):' — '+h(e)}</small></div>`).join('')}</div>${fu.length?`<div class="notice warn" style="margin-top:10px">${ic('timer')}<span>${fu.length} ${fu.length<=2?'محضر يتضمن':'محاضر تتضمن'} ملاحظات تحتاج حجز زيارة متابعة — تجدها في «متابعات مفتوحة».</span></div>`:''}${mode==='m'&&okN?`<div class="notice" style="margin-top:10px">${ic('download')}<span>نزّل المحاضر للتوقيع اليدوي من قائمة «معتمدة يدوياً بانتظار التوقيع».</span></div>`:''}`,actions:[{label:'تم',cls:'btn-primary',result:true}]})}
+ACT.bulkApprove=()=>bulkOpen();window.__bulkRun=bulkRun;
+function baDeco(){if(viewer())return;let n=0;try{n=(apprList().ready||[]).length}catch(e){}if(!n)return;
+ const hs=[...document.querySelectorAll('#v2 .kcol[data-k="ready"] .kcol-head')];
+ document.querySelectorAll('#v2 .panel-head h3').forEach(el=>{if(/^جاهزة للاعتماد/.test((el.textContent||'').trim()))hs.push(el.parentElement)});
+ hs.forEach(el=>{if(el.querySelector('.ba9-b'))return;el.insertAdjacentHTML('beforeend',`<button type="button" class="ba9-b" data-v2a="bulkApprove" title="اختيار عدة محاضر واعتمادها دفعة واحدة">${ic('list-checks','ico-sm')}اعتماد مجموعة</button>`)})}
+
+/* ============ ٣) مزدلفة ومقابلة الحجاج على المكان + فريق من الفريقين ============ */
+try{if(!CP_MSH.muzdalifa)CP_MSH.muzdalifa='مزدلفة'}catch(e){}
+try{if(!MSH_PLACE.muzdalifa)MSH_PLACE.muzdalifa='بمشعر مزدلفة'}catch(e){}
+try{PT_TITLE.muzdalifa='محضر زيارة {الحملة} {المكان} موسم {الموسم}'}catch(e){}
+try{['muzdalifa','interview'].forEach(t=>{const i=CAMP_T.indexOf(t);if(i>=0)CAMP_T.splice(i,1);if(!PLACE_T.includes(t))PLACE_T.push(t)})}catch(e){}
+try{const P=places();if(!P.some(p=>p.area==='مزدلفة')){P.push({id:'pl4',name:'مخيمات حجاج دولة قطر',area:'مزدلفة',types:['muzdalifa']});persist()}
+ P.forEach(p=>{if(p.area==='مزدلفة'&&!(p.types||[]).includes('muzdalifa'))(p.types=p.types||[]).push('muzdalifa')})}catch(e){}
+const PLT=['campready','muzdalifa','interview'];
+const LT=()=>D.v2plTeam||(D.v2plTeam={});
+window.__bkSel=window.__bkSel||{};
+function memPicker(t){const ins=D.inspectors||[];const TM=(D.teams||[]);const sel=new Set(window.__bkSel[t]||LT()[t]||ins.map(i=>i.id));
+ const grp=[...TM.map(x=>({id:x.id,name:x.name})),{id:'',name:'بدون فريق'}].map(g=>{const L=ins.filter(i=>(i.team||'')===g.id);if(!L.length)return'';
+  return`<div class="mp9-g"><div class="mp9-gh"><b>${h(g.name)}</b><button type="button" class="link" data-mpg="${h(g.id)}">تحديد الفريق كاملاً</button></div><div class="mp9-l">${L.map(i=>`<label class="mp9-c ${sel.has(i.id)?'on':''}"><input type="checkbox" value="${i.id}" ${sel.has(i.id)?'checked':''}><span class="avatar">${h((i.name||' ').trim()[0])}</span><span><b>${h(i.name)}</b><small>${h(i.role||'')}</small></span></label>`).join('')}</div></div>`}).join('');
+ return`<div class="mp9" id="bk_mem" data-t="${t}"><div class="mp9-h"><span class="lbl">${ic('users-round','ico-sm')}فريق المعاينة — اختر الأعضاء من الفريقين</span><span class="mp9-q"><button type="button" class="link" data-mpa="all">الجميع</button><button type="button" class="link" data-mpa="none">لا أحد</button>${LT()[t]?`<span class="muted">· يُقترح آخر فريق استُخدم لهذا النوع</span>`:''}</span></div>${grp}</div>`}
+function plcBox(t){if(t==='muzdalifa'){const P=places().filter(p=>(p.types||[]).includes('muzdalifa')||p.area==='مزدلفة');return`<div class="bk2x"><span class="lbl">الموقع محل الزيارة:</span><select id="bk_plid">${P.map(p=>`<option value="${p.id}">${h(p.name)} — ${h(p.area)}</option>`).join('')}</select><span class="muted">المحضر على الموقع وليس على حملة</span></div>`}
+ if(t==='interview'){const hs=[...new Set(((typeof camps==='function'?camps():[])||[]).map(r=>r.hotel).filter(Boolean))];const ps=places().map(p=>p.name+' '+(AREA[p.area]||''));
+  return`<div class="bk2x"><span class="lbl">مكان المقابلة:</span><input type="text" id="bk_plc" list="bk_plcL" placeholder="مثال: مخيمات حجاج دولة قطر بمشعر منى" value="${h(window.__bkPlc||'')}"><datalist id="bk_plcL">${[...ps,...hs].map(x=>`<option value="${h(x)}">`).join('')}</datalist><span class="muted">المحضر على المكان وليس على حملة</span></div>`}return''}
+window.__bkX=t=>PLT.includes(t)?plcBox(t)+memPicker(t):'';
+window.__bkMem=t=>{const b=document.querySelector('#v2modal #bk_mem');if(!b)return null;return[...b.querySelectorAll('input:checked')].map(x=>x.value)};
+document.addEventListener('click',e=>{const b=e.target.closest('#bk_mem [data-mpa],#bk_mem [data-mpg]');if(!b)return;e.preventDefault();const box=b.closest('#bk_mem');
+ if(b.dataset.mpa)box.querySelectorAll('input').forEach(c=>c.checked=b.dataset.mpa==='all');else{const g=b.closest('.mp9-g');const cs=[...g.querySelectorAll('input')];const all=cs.every(c=>c.checked);cs.forEach(c=>c.checked=!all)}
+ box.dispatchEvent(new Event('change',{bubbles:true}))},true);
+document.addEventListener('change',e=>{const box=e.target.closest&&e.target.closest('#bk_mem');if(box){window.__bkSel[box.dataset.t]=[...box.querySelectorAll('input:checked')].map(x=>x.value);box.querySelectorAll('.mp9-c').forEach(l=>l.classList.toggle('on',l.querySelector('input').checked))}
+ if(e.target&&e.target.id==='bk_plc')window.__bkPlc=e.target.value},true);
+document.addEventListener('input',e=>{if(e.target&&e.target.id==='bk_plc')window.__bkPlc=e.target.value},true);
+window.__bkEv=(e,ok)=>{if(ok.mem&&ok.mem.length){e.v2mem=ok.mem.slice();LT()[ok.type]=ok.mem.slice()}
+ if(ok.type==='muzdalifa'){const pl=placeById(ok.plid)||places().find(p=>p.area==='مزدلفة');if(pl){e.plid=pl.id;e.place=pl.name}e.cid=''}};
+window.__bkPost=(rep,ok)=>{if(ok.mem&&ok.mem.length){rep.members=ok.mem.slice();LT()[ok.type]=ok.mem.slice()}if(ok.type==='interview'&&ok.plc){rep.campaign=ok.plc;rep.v2plc=ok.plc;delete rep.campaignId}window.__bkPlc=''};
+
+try{const _r=render;render=function(){const x=_r.apply(this,arguments);setTimeout(()=>{baDeco();dtScan()},140);return x}}catch(e){}
+setTimeout(baDeco,500);
 }
 
 function v2zeInit(){const PH='(                    )'
@@ -28889,7 +29041,7 @@ D.meta.fileName='مواقع-إقامة-الحملات-'+D.rs.seasonH}if(D.rs.clo
 S().v2places=JSON.parse(JSON.stringify(PL_DEF))
 delete D.next
 persist()
-return{secs:D.sections.map(s=>s.id+':'+s.rows.length),season:D.rs.seasonH}}try{v2zpInit()}catch(e){console.error("v2zp",e)}try{v2zcInit()}catch(e){console.error("v2zc",e)}try{v2zdInit()}catch(e){console.error("v2zd",e)}try{v2zeInit()}catch(e){console.error("v2ze",e)}try{v2zgInit()}catch(e){console.error("v2zg",e)}try{v2zhInit()}catch(e){console.error("v2zh",e)}try{v2ziInit()}catch(e){console.error("v2zi",e)}try{v2zjInit()}catch(e){console.error("v2zj",e)}try{v2zkInit()}catch(e){console.error("v2zk",e)}try{v2zlInit()}catch(e){console.error("v2zl",e)}try{v2znInit()}catch(e){console.error("v2zn",e)}try{v2zoInit()}catch(e){console.error("v2zo",e)}try{v2zpInit()}catch(e){console.error("v2zp",e)}try{v2zrInit()}catch(e){console.error("v2zr",e)}try{v2zsInit()}catch(e){console.error("v2zs",e)}try{v2ztInit()}catch(e){console.error("v2zt",e)}window.__v2={reset:v2Reset,go:go,render:render,V:V,ACT:ACT,typeState:typeState,campState:campState,odWrite:odWrite,places:places,startFromEvent:startFromEvent,boot:boot,blobOf:blobOf}})()
+return{secs:D.sections.map(s=>s.id+':'+s.rows.length),season:D.rs.seasonH}}try{v2zpInit()}catch(e){console.error("v2zp",e)}try{v2zcInit()}catch(e){console.error("v2zc",e)}try{v2zdInit()}catch(e){console.error("v2zd",e)}try{v2zeInit()}catch(e){console.error("v2ze",e)}try{v2zgInit()}catch(e){console.error("v2zg",e)}try{v2zhInit()}catch(e){console.error("v2zh",e)}try{v2ziInit()}catch(e){console.error("v2zi",e)}try{v2zjInit()}catch(e){console.error("v2zj",e)}try{v2zkInit()}catch(e){console.error("v2zk",e)}try{v2zlInit()}catch(e){console.error("v2zl",e)}try{v2znInit()}catch(e){console.error("v2zn",e)}try{v2zoInit()}catch(e){console.error("v2zo",e)}try{v2zpInit()}catch(e){console.error("v2zp",e)}try{v2zrInit()}catch(e){console.error("v2zr",e)}try{v2zsInit()}catch(e){console.error("v2zs",e)}try{v2ztInit()}catch(e){console.error("v2zt",e)}try{v2zuInit()}catch(e){console.error("v2zu",e)}window.__v2={reset:v2Reset,go:go,render:render,V:V,ACT:ACT,typeState:typeState,campState:campState,odWrite:odWrite,places:places,startFromEvent:startFromEvent,boot:boot,blobOf:blobOf}})()
 Object.assign(window,{__n48:{archView:archView,archBack:archBack,newSeason:()=>newSeason(),n48Class:n48Class,n48Editor:n48Editor,seasonMenu:seasonMenu,buildHtml:()=>buildHtmlOut(),n67Apply:n67Apply,n67Row:n67Row,openReport:(i,m)=>openReport(i,m),reportPdfBlob:r=>reportPdfBlob(r),titleShot:r=>titleShot(r)}})
 window.__app={get D(){return D},show:show,newReport:newReport,buildReportDocx:buildReportDocx,buildRegisterDocx:buildRegisterDocx,renderArrivalPrint:renderArrivalPrint,exportViewer:exportViewer,genFinal:genFinal}})()
 
