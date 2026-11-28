@@ -4581,20 +4581,20 @@ body.rl-view #v2 [data-v2a="publish"],body.rl-view #v2 [data-v2a="pubManual"],bo
 #v2 .mp9 .link{font-size:12px}
 
 
-/* الاعتماد — التصميم (1): خط ذهبي رفيع ولمسة عنابية، بلا إطار، بأقل ارتفاع */
-.paper .ap82{margin-top:6px !important;padding:5px 0 0 !important;border:0 !important;background:none !important;position:relative;box-shadow:none !important}
-.paper .ap82::before{content:"";position:absolute;top:0;right:0;left:0;height:1px;background:linear-gradient(to left,#7A1F2E 0,#7A1F2E 70px,#C9A96E 70px,#C9A96E 100%)}
-.paper .ap82 .p-appr{margin:0 0 3px !important;line-height:1.4 !important}
-.paper .ap82 .p-appr .red,.paper .ap82 .p-appr>.red{color:#7A1F2E !important}
-.paper .ap82 .hd82{display:flex !important;justify-content:flex-start !important;align-items:flex-end !important;gap:14px !important;line-height:1.25 !important;margin:0 !important;padding:0 !important}
-.paper .ap82 .nm82{white-space:nowrap}
+/* الاعتماد — التصميم (1) كما في النموذج: خط ذهبي أعلى، شريط عنابي يمين، الاسم فوق المسمى، والتوقيع بجواره على خط قصير */
+.paper .ap82{margin-top:8px !important;padding:7px 16px 7px 0 !important;border:0 !important;border-top:1.2px solid #C9A96E !important;border-bottom:1px solid #E6DED0 !important;background:none !important;position:relative;box-shadow:none !important;break-inside:avoid}
+.paper .ap82::before{content:"";position:absolute;right:0;top:7px;bottom:7px;width:5px;border-radius:3px;background:#7A1F2E}
+.paper .ap82 .p-appr{margin:0 0 4px !important;line-height:1.45 !important;text-indent:0 !important}
+.paper .ap82 .p-appr .red,.paper .ap82 .p-appr>.red{color:#7A1F2E !important;font-weight:800 !important}
+.paper .ap82 .hd82{display:flex !important;justify-content:flex-start !important;align-items:center !important;gap:.55in !important;margin:0 !important;padding:0 .9in 0 0 !important;line-height:1.2 !important}
+.paper .ap82 .nm82{display:flex !important;flex-direction:column;align-items:center;font-size:0 !important;white-space:nowrap}
 .paper .ap82 .nm82 .lb82{display:none !important}
-.paper .ap82 .nm82 b{color:#7A1F2E !important;font-weight:700}
-.paper .ap82 .nm82 > span:not(.lb82){color:#4A4A4A !important}
-.paper .ap82 .sg82{display:inline-flex !important;align-items:flex-end !important;gap:6px !important;margin:0 !important}
-.paper .ap82 .sg82 .lb82{font-size:.72em !important;color:#8A7A5A !important;padding-bottom:2px}
-.paper .ap82 .sg82 img{border-bottom:1.3px solid #7A1F2E;padding:0 .12in 1px;max-height:.42in !important;max-width:1.45in !important;width:auto;height:auto;display:inline-block;vertical-align:bottom}
-.paper .ap82 .sg82 .sgl82{display:inline-block;width:1.4in;height:.32in;border-bottom:1.3px solid #7A1F2E}
+.paper .ap82 .nm82 b{font-size:calc(var(--bsz,14pt) + 2pt) !important;color:#7A1F2E !important;font-weight:800 !important;line-height:1.2}
+.paper .ap82 .nm82 > span:not(.lb82){font-size:calc(var(--bsz,14pt) - 1pt) !important;color:#A08050 !important;line-height:1.25}
+.paper .ap82 .sg82{display:inline-flex !important;align-items:flex-end !important;gap:10px !important;margin:0 !important}
+.paper .ap82 .sg82 .lb82{font-size:var(--bsz,14pt) !important;color:#1c2b4d !important;padding-bottom:3px}
+.paper .ap82 .sg82 img{border-bottom:1px solid #6B6B6B;width:1.9in !important;max-width:1.9in !important;height:.42in !important;max-height:.42in !important;object-fit:contain;padding:0 0 1px;display:inline-block;vertical-align:bottom}
+.paper .ap82 .sg82 .sgl82{display:inline-block;width:1.9in;height:.32in;border-bottom:1px solid #6B6B6B}
 /* صندوق المتابعة في معاينة المحضر */
 #v2 .fu9{margin-top:10px;border:1px solid #E1ECE6;border-radius:12px;padding:10px;background:#FAFCFB;display:flex;flex-direction:column;gap:8px}
 #v2 .fu9.ok{flex-direction:row;align-items:center;gap:10px;background:#EEF6F1;border-color:#BFDCCB}
@@ -27722,7 +27722,7 @@ try{cmpAction=function(id,inRep){return cmpOne(id,inRep)}}catch(err){console.err
 ACT.cView=b=>cmpOne(b.dataset.id);
 
 /* ===== رقم الإصدار بجوار حالة الحفظ ===== */
-window.__BUILD='2026.11.28-1438';
+window.__BUILD='2026.11.28-1443';
 function verChip(){try{const bar=document.querySelector('#v2 .topbar-actions');if(!bar)return;let v=bar.querySelector('.ver9')
  if(!v){v=document.createElement('span');v.className='ver9';v.title='رقم إصدار النظام — للتأكد أنك تعمل على آخر نسخة';const ref=bar.querySelector('.fs7p')||bar.querySelector('[class*="sync"]')||bar.firstElementChild;ref?ref.insertAdjacentElement('afterend',v):bar.prepend(v)}
  v.innerHTML=`<span>الإصدار <bdi dir="ltr">${window.__BUILD}</bdi></span>`}catch(e){}}
@@ -28553,18 +28553,21 @@ ACT.fuNow=async b=>{const p=repById(b.dataset.id);if(!p)return;
  const e={id:uid(),src:p.id,done:false,cid:p.campaignId||'',date:tISO(),time:(()=>{try{return nowHM()}catch(_){const d=new Date();return pad(d.getHours())+':'+pad(d.getMinutes())}})(),type:p.type,note:'محضر تصحيحي — '+regStr(p.no),v2corr:true};
  if(p.v2place){e.plid=p.v2place;e.place=p.campaign}if(p.members&&p.members.length)e.v2mem=p.members.slice();
  D.schedule=D.schedule||[];D.schedule.push(e);persist();startFromEvent(e)};
-/* ٣) الاعتماد — التصميم (1) في Word */
+/* ٣) الاعتماد — التصميم (1) في Word: خط ذهبي أعلى، شريط عنابي يمين، الاسم فوق المسمى، التوقيع بجواره */
 try{const _hb=headBlockDocx;headBlockDocx=function(st,r,name,sig,sw,sh){if(typeof W74==='undefined'||!W74||S().v2appr1===false||window.__noAp1)return _hb.apply(this,arguments);
- const bs=+S().bodySize||14;const M='7A1F2E',G='C9A96E';
- let ap='';if(W74.appr){ap=para(run((S().approvalLabel||'الاعتماد والتوجيه')+': ',{font:'Beiruti Medium',sz:bs,b:false,color:M})+(rtPlain(r.approval,r)?rtRuns(r.approval,r):''),{after:0,before:0,jc:'both',keep:1,line:240});
-  ap=ap.replace('<w:bidi/>',`<w:pBdr><w:top w:val="single" w:sz="4" w:space="2" w:color="${G}"/></w:pBdr><w:bidi/>`)}
- let sg='';if(sigOn()&&sig)sg=st.img(sig,...fitTw(sw||300,sh||120,1900,340));
- const c1=para(run(nm74(name)+'‏',{font:'Beiruti Medium',sz:bs,b:true,color:M})+run(' – '+nm74(S().unitHeadTitle||'رئيس وحدة الرقابة والتفتيش')+'‏',{font:'Beiruti Medium',sz:bs-1,b:false,color:'4A4A4A'}),{after:0,jc:'start',line:240});
- let c2=para(run('التوقيع ',{font:'Beiruti Medium',sz:Math.max(9,bs-4),b:false,color:'8A7A5A'})+sg,{after:0,jc:'center',line:240});
- c2=c2.replace('<w:bidi/>',`<w:pBdr><w:bottom w:val="single" w:sz="8" w:space="1" w:color="${M}"/></w:pBdr><w:bidi/>`);
- const W1=5700,W2=2300,W3=1648;
- const tb=ntable([trow([tcell(c1,W1),tcell(c2,W2),tcell(para('',{after:0}),W3)])],[W1,W2,W3]).replace(/<w:vAlign w:val="center"\/>/g,'<w:vAlign w:val="bottom"/>');
- return ap+kn74(tb)}}catch(e){console.error('v2zw hb',e)}
+ const bs=+S().bodySize||14;const M='7A1F2E',G='C9A96E',GT='A08050';
+ const P=(inner,o)=>{o=o||{};let x=para(inner,Object.assign({after:0,before:0,line:240},o));if(o.ex)x=x.replace(/w:line="\d+" w:lineRule="auto"/,`w:line="${o.ex}" w:lineRule="exact"`);return x};
+ let ap='';if(W74.appr)ap=P(run((S().approvalLabel||'الاعتماد والتوجيه')+': ',{font:'Beiruti Medium',sz:bs,b:true,color:M})+(rtPlain(r.approval,r)?rtRuns(r.approval,r):''),{jc:'both',keep:1,after:0,ex:Math.round(bs*20*1.25)});
+ let sg='';if(sigOn()&&sig)sg=st.img(sig,...fitTw(sw||300,sh||120,2400,330));
+ const nmP=P(run(nm74(name)+'‏',{font:'Beiruti Medium',sz:bs+2,b:true,color:M}),{jc:'center',keep:1,ex:Math.round((bs+2)*20*1.08)})+P(run(nm74(S().unitHeadTitle||'رئيس وحدة الرقابة والتفتيش')+'‏',{font:'Beiruti Medium',sz:bs-1,b:false,color:GT}),{jc:'center',ex:Math.round((bs-1)*20*1.05)});
+ const lbP=P(run('التوقيع :',{font:'Beiruti Medium',sz:bs,b:false,color:'1C2B4D'}),{jc:'center',ex:Math.round(bs*20*1.25)});
+ const sgP=P(sg||run(' ',{sz:bs}),{jc:'center'}).replace('<w:bidi/>','<w:pBdr><w:bottom w:val="single" w:sz="6" w:space="1" w:color="6B6B6B"/></w:pBdr><w:bidi/>');
+ const IW=[900,3300,1100,2600,1500];
+ const inner=ntable([trow([tcell(P(''),IW[0]),tcell(nmP,IW[1]),tcell(lbP,IW[2]),tcell(sgP,IW[3]),tcell(P(''),IW[4])])],IW).replace(/<w:vAlign w:val="center"\/>/g,'<w:vAlign w:val="bottom"/>');
+ const OW=[110,9538];
+ let outer=ntable([trow([tcell(P('',{line:240}),OW[0],{fill:M}),tcell(ap+inner+P('',{ex:20}),OW[1])])],OW);
+ outer=outer.replace(/<w:tblBorders>[\s\S]*?<\/w:tblBorders>/,`<w:tblBorders><w:top w:val="single" w:sz="6" w:space="0" w:color="${G}"/><w:left w:val="nil"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="E6DED0"/><w:right w:val="nil"/><w:insideH w:val="nil"/><w:insideV w:val="nil"/></w:tblBorders>`).replace('<w:tblCellMar><w:left w:w="40" w:type="dxa"/><w:right w:w="40" w:type="dxa"/></w:tblCellMar>','<w:tblCellMar><w:top w:w="40" w:type="dxa"/><w:left w:w="40" w:type="dxa"/><w:bottom w:w="20" w:type="dxa"/><w:right w:w="160" w:type="dxa"/></w:tblCellMar>');
+ return kn74(outer)}}catch(e){console.error('v2zw hb',e)}
 }
 
 function v2zeInit(){const PH='(                    )'
