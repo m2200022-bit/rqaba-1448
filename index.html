@@ -4581,20 +4581,28 @@ body.rl-view #v2 [data-v2a="publish"],body.rl-view #v2 [data-v2a="pubManual"],bo
 #v2 .mp9 .link{font-size:12px}
 
 
-/* الاعتماد — التصميم (1) كما في النموذج: خط ذهبي أعلى، شريط عنابي يمين، الاسم فوق المسمى، والتوقيع بجواره على خط قصير */
-.paper .ap82{margin-top:8px !important;padding:7px 16px 7px 0 !important;border:0 !important;border-top:1.2px solid #C9A96E !important;border-bottom:1px solid #E6DED0 !important;background:none !important;position:relative;box-shadow:none !important;break-inside:avoid}
+/* الاعتماد — التصميم (1) — أعمدته مطابقة لأعمدة جدول التوقيعات فوقه: الاسم تحت الأسماء والتوقيع تحت التوقيعات */
+.paper table.sg74{table-layout:fixed !important;width:100% !important}
+.paper table.sg74 tr > :nth-child(1):nth-last-child(3){width:37.3% !important}
+.paper table.sg74 tr > :nth-child(2):nth-last-child(2){width:34.7% !important}
+.paper table.sg74 tr > :nth-child(3):nth-last-child(1){width:28% !important}
+.paper .ap82{margin-top:8px !important;padding:7px 0 7px 0 !important;border:0 !important;border-top:1.2px solid #C9A96E !important;border-bottom:1px solid #E6DED0 !important;background:none !important;position:relative;box-shadow:none !important;break-inside:avoid}
 .paper .ap82::before{content:"";position:absolute;right:0;top:7px;bottom:7px;width:5px;border-radius:3px;background:#7A1F2E}
-.paper .ap82 .p-appr{margin:0 0 4px !important;line-height:1.45 !important;text-indent:0 !important}
+.paper .ap82 .p-appr{margin:0 0 4px !important;padding:0 16px 0 0 !important;line-height:1.45 !important;text-indent:0 !important}
 .paper .ap82 .p-appr .red,.paper .ap82 .p-appr>.red{color:#7A1F2E !important;font-weight:800 !important}
-.paper .ap82 .hd82{display:flex !important;justify-content:flex-start !important;align-items:center !important;gap:.55in !important;margin:0 !important;padding:0 .9in 0 0 !important;line-height:1.2 !important}
-.paper .ap82 .nm82{display:flex !important;flex-direction:column;align-items:center;font-size:0 !important;white-space:nowrap}
+.paper .ap82 .hd82{display:grid !important;grid-template-columns:37.3% 34.7% 28% !important;align-items:end !important;gap:0 !important;margin:0 !important;padding:0 !important;line-height:1.2 !important}
+.paper .p-sig:has(table.sg74 tr > :nth-child(4)) .ap82 .hd82{grid-template-columns:13.5% 40.7% 13.4% 32.4% !important}
+.paper .ap82 .nm82{grid-column:1;display:flex !important;flex-direction:column;align-items:center;font-size:0 !important;white-space:nowrap;padding-right:10px}
+.paper .p-sig:has(table.sg74 tr > :nth-child(4)) .ap82 .nm82{grid-column:1 / span 2}
 .paper .ap82 .nm82 .lb82{display:none !important}
 .paper .ap82 .nm82 b{font-size:calc(var(--bsz,14pt) + 2pt) !important;color:#7A1F2E !important;font-weight:800 !important;line-height:1.2}
 .paper .ap82 .nm82 > span:not(.lb82){font-size:calc(var(--bsz,14pt) - 1pt) !important;color:#A08050 !important;line-height:1.25}
-.paper .ap82 .sg82{display:inline-flex !important;align-items:flex-end !important;gap:10px !important;margin:0 !important}
-.paper .ap82 .sg82 .lb82{font-size:var(--bsz,14pt) !important;color:#1c2b4d !important;padding-bottom:3px}
-.paper .ap82 .sg82 img{border-bottom:1px solid #6B6B6B;width:1.9in !important;max-width:1.9in !important;height:.42in !important;max-height:.42in !important;object-fit:contain;padding:0 0 1px;display:inline-block;vertical-align:bottom}
-.paper .ap82 .sg82 .sgl82{display:inline-block;width:1.9in;height:.32in;border-bottom:1px solid #6B6B6B}
+.paper .ap82 .sg82{display:contents !important}
+.paper .ap82 .sg82 .lb82{grid-column:2;justify-self:end;font-size:var(--bsz,14pt) !important;color:#1c2b4d !important;padding:0 0 3px 10px}
+.paper .p-sig:has(table.sg74 tr > :nth-child(4)) .ap82 .sg82 .lb82{grid-column:3}
+.paper .ap82 .sg82 img,.paper .ap82 .sg82 .sgl82{grid-column:-2;justify-self:center}
+.paper .ap82 .sg82 img{border-bottom:1px solid #6B6B6B;width:82% !important;max-width:82% !important;height:.46in !important;max-height:.46in !important;object-fit:contain;padding:0 0 1px;display:block}
+.paper .ap82 .sg82 .sgl82{display:block;width:82%;height:.34in;border-bottom:1px solid #6B6B6B}
 /* صندوق المتابعة في معاينة المحضر */
 #v2 .fu9{margin-top:10px;border:1px solid #E1ECE6;border-radius:12px;padding:10px;background:#FAFCFB;display:flex;flex-direction:column;gap:8px}
 #v2 .fu9.ok{flex-direction:row;align-items:center;gap:10px;background:#EEF6F1;border-color:#BFDCCB}
@@ -27722,7 +27730,7 @@ try{cmpAction=function(id,inRep){return cmpOne(id,inRep)}}catch(err){console.err
 ACT.cView=b=>cmpOne(b.dataset.id);
 
 /* ===== رقم الإصدار بجوار حالة الحفظ ===== */
-window.__BUILD='2026.11.28-1443';
+window.__BUILD='2026.11.28-1631';
 function verChip(){try{const bar=document.querySelector('#v2 .topbar-actions');if(!bar)return;let v=bar.querySelector('.ver9')
  if(!v){v=document.createElement('span');v.className='ver9';v.title='رقم إصدار النظام — للتأكد أنك تعمل على آخر نسخة';const ref=bar.querySelector('.fs7p')||bar.querySelector('[class*="sync"]')||bar.firstElementChild;ref?ref.insertAdjacentElement('afterend',v):bar.prepend(v)}
  v.innerHTML=`<span>الإصدار <bdi dir="ltr">${window.__BUILD}</bdi></span>`}catch(e){}}
@@ -28557,16 +28565,23 @@ ACT.fuNow=async b=>{const p=repById(b.dataset.id);if(!p)return;
 try{const _hb=headBlockDocx;headBlockDocx=function(st,r,name,sig,sw,sh){if(typeof W74==='undefined'||!W74||S().v2appr1===false||window.__noAp1)return _hb.apply(this,arguments);
  const bs=+S().bodySize||14;const M='7A1F2E',G='C9A96E',GT='A08050';
  const P=(inner,o)=>{o=o||{};let x=para(inner,Object.assign({after:0,before:0,line:240},o));if(o.ex)x=x.replace(/w:line="\d+" w:lineRule="auto"/,`w:line="${o.ex}" w:lineRule="exact"`);return x};
- let ap='';if(W74.appr)ap=P(run((S().approvalLabel||'الاعتماد والتوجيه')+': ',{font:'Beiruti Medium',sz:bs,b:true,color:M})+(rtPlain(r.approval,r)?rtRuns(r.approval,r):''),{jc:'both',keep:1,after:0,ex:Math.round(bs*20*1.25)});
- let sg='';if(sigOn()&&sig)sg=st.img(sig,...fitTw(sw||300,sh||120,2400,330));
+ let ap='';if(W74.appr)ap=P(run((S().approvalLabel||'الاعتماد والتوجيه')+': ',{font:'Beiruti Medium',sz:bs,b:true,color:M})+(rtPlain(r.approval,r)?rtRuns(r.approval,r):''),{jc:'both',keep:1,after:0,ex:Math.round(bs*20*1.15)});
+ let sg='';if(sigOn()&&sig)sg=st.img(sig,...fitTw(sw||300,sh||120,1900,330));
  const nmP=P(run(nm74(name)+'‏',{font:'Beiruti Medium',sz:bs+2,b:true,color:M}),{jc:'center',keep:1,ex:Math.round((bs+2)*20*1.08)})+P(run(nm74(S().unitHeadTitle||'رئيس وحدة الرقابة والتفتيش')+'‏',{font:'Beiruti Medium',sz:bs-1,b:false,color:GT}),{jc:'center',ex:Math.round((bs-1)*20*1.05)});
  const lbP=P(run('التوقيع :',{font:'Beiruti Medium',sz:bs,b:false,color:'1C2B4D'}),{jc:'center',ex:Math.round(bs*20*1.25)});
- const sgP=P(sg||run(' ',{sz:bs}),{jc:'center'}).replace('<w:bidi/>','<w:pBdr><w:bottom w:val="single" w:sz="6" w:space="1" w:color="6B6B6B"/></w:pBdr><w:bidi/>');
- const IW=[900,3300,1100,2600,1500];
- const inner=ntable([trow([tcell(P(''),IW[0]),tcell(nmP,IW[1]),tcell(lbP,IW[2]),tcell(sgP,IW[3]),tcell(P(''),IW[4])])],IW).replace(/<w:vAlign w:val="center"\/>/g,'<w:vAlign w:val="bottom"/>');
- const OW=[110,9538];
- let outer=ntable([trow([tcell(P('',{line:240}),OW[0],{fill:M}),tcell(ap+inner+P('',{ex:20}),OW[1])])],OW);
- outer=outer.replace(/<w:tblBorders>[\s\S]*?<\/w:tblBorders>/,`<w:tblBorders><w:top w:val="single" w:sz="6" w:space="0" w:color="${G}"/><w:left w:val="nil"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="E6DED0"/><w:right w:val="nil"/><w:insideH w:val="nil"/><w:insideV w:val="nil"/></w:tblBorders>`).replace('<w:tblCellMar><w:left w:w="40" w:type="dxa"/><w:right w:w="40" w:type="dxa"/></w:tblCellMar>','<w:tblCellMar><w:top w:w="40" w:type="dxa"/><w:left w:w="40" w:type="dxa"/><w:bottom w:w="20" w:type="dxa"/><w:right w:w="160" w:type="dxa"/></w:tblCellMar>');
+ const sgP=P(sg||run(' ',{sz:bs}),{jc:'center',ind:240}).replace('<w:bidi/>','<w:pBdr><w:bottom w:val="single" w:sz="6" w:space="1" w:color="6B6B6B"/></w:pBdr><w:bidi/>');
+ const M3=(()=>{try{return memMode74()==='merged'}catch(e){return true}})();
+ // أعمدة مطابقة لجدول التوقيعات: [شريط, الاسم, الصفة/التسمية, التوقيع]
+ const BAR=110,CW=M3?[3600-BAR,3348,2700]:[1300+3924-BAR,1300,3124];
+ const tc=(inner,w,o)=>{o=o||{};return`<w:tc><w:tcPr><w:tcW w:w="${w}" w:type="dxa"/>${o.span?`<w:gridSpan w:val="${o.span}"/>`:''}${o.vm?`<w:vMerge${o.vm==='r'?' w:val="restart"':''}/>`:''}${o.fill?`<w:shd w:val="clear" w:color="auto" w:fill="${o.fill}"/>`:''}<w:vAlign w:val="${o.va||'bottom'}"/></w:tcPr>${inner}</w:tc>`};
+ const lbE=lbP.replace('<w:jc w:val="center"/>','<w:jc w:val="end"/>');
+ const rows=[];
+ if(ap)rows.push(trow([tc(P(''),BAR,{vm:'r',fill:M}),tc(ap,CW[0]+CW[1]+CW[2],{span:3,va:'top'})]));
+ rows.push(trow([tc(P(''),BAR,ap?{vm:'c',fill:M}:{fill:M}),tc(nmP,CW[0]),tc(lbE,CW[1]),tc(sgP,CW[2])]));
+ let outer=ntable(rows,[BAR,...CW]);
+ outer=outer.replace(/<w:vMerge w:val="c"\/>|<w:vMerge\/>/g,'<w:vMerge/>');
+ outer=outer.replace(/<w:tblBorders>[\s\S]*?<\/w:tblBorders>/,`<w:tblBorders><w:top w:val="single" w:sz="6" w:space="0" w:color="${G}"/><w:left w:val="nil"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="E6DED0"/><w:right w:val="nil"/><w:insideH w:val="nil"/><w:insideV w:val="nil"/></w:tblBorders>`).replace('<w:tblCellMar><w:left w:w="40" w:type="dxa"/><w:right w:w="40" w:type="dxa"/></w:tblCellMar>','<w:tblCellMar><w:top w:w="20" w:type="dxa"/><w:left w:w="60" w:type="dxa"/><w:bottom w:w="0" w:type="dxa"/><w:right w:w="60" w:type="dxa"/></w:tblCellMar>');
+ outer=para('',{after:0,line:120,keep:1}).replace(/w:line="120" w:lineRule="auto"/,'w:line="20" w:lineRule="exact"')+outer;
  return kn74(outer)}}catch(e){console.error('v2zw hb',e)}
 }
 
